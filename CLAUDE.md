@@ -43,4 +43,21 @@ Five sections numbered sequentially in the HTML:
 5. `#writing` (04) — `.writing-grid` of `.writing-card` items + a full-width `.writing-cta`
 6. `#contact` (05) — five `.contact-card` links in a five-column grid
 
-All writing cards currently show "Coming soon" and link to Medium. When articles are published, update the `.wc-label` text and wrap the card in an `<a>` tag pointing to the article URL.
+All writing cards currently show "Coming soon". They are authored in a separate Claude project and published to Medium. Each card has a `data-post` slug for easy targeting.
+
+### Publishing a post
+
+When a post goes live on Medium, give a Claude Code session the Medium URL and the post slug (or title). The changes needed are:
+
+1. Find the card by its `data-post` attribute, e.g. `data-post="building-teams-like-an-intrapreneur"`
+2. Change the element from `<div class="writing-card" ...>` to `<a class="writing-card" ... href="[medium-url]" target="_blank" rel="noopener">`  
+   — the CSS already handles `<a>` elements correctly (no underline, correct colour)
+3. Update `.wc-label` from `Article · Coming soon` to `Article · [Mon YYYY]`
+
+The six post slugs are:
+- `leading-with-and-without-authority`
+- `building-teams-like-an-intrapreneur`
+- `the-bottleneck-is-never-the-technology`
+- `building-my-personal-ai-operating-system`
+- `human-in-the-loop`
+- `why-tokenomics-matter`
