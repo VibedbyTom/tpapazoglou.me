@@ -140,6 +140,11 @@ h2 .g { color: var(--green); }
 .j-desc { font-size: 0.875rem; font-weight: 300; color: var(--ink-mid); line-height: 1.8; padding: 0 0 2rem calc(3rem + 2rem); }
 .j-desc p { margin-bottom: 0.75rem; }
 .j-desc p:last-child { margin-bottom: 0; }
+.section-toggle { background: none; border: none; padding: 0; margin: 0; font: inherit; color: inherit; cursor: pointer; width: 100%; text-align: left; }
+.section-toggle:focus-visible { outline: 2px solid var(--green); outline-offset: 4px; }
+.section-toggle-icon { font-family: var(--mono); font-size: 1.1rem; line-height: 1; color: var(--green); transition: transform 0.3s ease; margin-left: auto; flex-shrink: 0; }
+.section-toggle.open .section-toggle-icon { transform: rotate(45deg); }
+.section-grid-wrap { overflow: hidden; max-height: 0; transition: max-height 0.35s ease; }
 .thoughts-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 0.5rem; }
 .thought-card { background: var(--surface-2); border: 1px solid var(--border); border-radius: 2px; padding: 1.75rem; display: flex; flex-direction: column; gap: 0.75rem; transition: border-color 0.15s; }
 .thought-card:hover { border-color: var(--green-border); }
@@ -376,10 +381,12 @@ footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; text-align: cente
 </div>
 </section>
 <section id="thinking">
-<div class="section-meta">
+<button class="section-meta section-toggle" aria-expanded="false">
 <span class="section-num">03 /</span>
 <h2>What I'm<br><span class="g">Thinking.</span></h2>
-</div>
+<span class="section-toggle-icon">+</span>
+</button>
+<div class="section-grid-wrap">
 <div class="thoughts-grid">
 <div class="thought-card thought-network">
 <p class="thought-label">On networks</p>
@@ -429,12 +436,15 @@ footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; text-align: cente
 </div>
 </div>
 </div>
+</div>
 </section>
 <section id="writing">
-<div class="section-meta">
+<button class="section-meta section-toggle" aria-expanded="false">
 <span class="section-num">04 /</span>
 <h2>On<br><span class="g">Paper.</span></h2>
-</div>
+<span class="section-toggle-icon">+</span>
+</button>
+<div class="section-grid-wrap">
 <div class="writing-grid">
 <div class="writing-card">
 <a href="https://medium.com/@tompapazoglou/the-alignment-you-skip-on-day-zero-is-the-failure-you-explain-on-day-one-b126632378ee" target="_blank" rel="noopener">
@@ -495,6 +505,7 @@ footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; text-align: cente
 <p class="wcta-text">Technology leadership.<br>Systems thinking.<br><span class="g">AI and the future of work.</span></p>
 </div>
 <p class="wcta-sub">Some lessons cost years to learn. Everything here comes from doing the work. My son is entering this industry. I hope he finds something worth keeping.</p>
+</div>
 </div>
 </div>
 </section>
@@ -583,6 +594,29 @@ document.querySelectorAll('#journey .j-header').forEach(function (header) {
   });
   wrap.addEventListener('transitionend', function () {
     if (item.classList.contains('open')) {
+      wrap.style.maxHeight = 'none';
+    }
+  });
+});
+document.querySelectorAll('.section-toggle').forEach(function (button) {
+  var wrap = button.nextElementSibling;
+  button.addEventListener('click', function () {
+    var isOpen = button.classList.contains('open');
+    if (isOpen) {
+      wrap.style.maxHeight = wrap.scrollHeight + 'px';
+      requestAnimationFrame(function () {
+        wrap.style.maxHeight = '0px';
+      });
+      button.classList.remove('open');
+      button.setAttribute('aria-expanded', 'false');
+    } else {
+      wrap.style.maxHeight = wrap.scrollHeight + 'px';
+      button.classList.add('open');
+      button.setAttribute('aria-expanded', 'true');
+    }
+  });
+  wrap.addEventListener('transitionend', function () {
+    if (button.classList.contains('open')) {
       wrap.style.maxHeight = 'none';
     }
   });
