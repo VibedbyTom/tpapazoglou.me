@@ -126,13 +126,18 @@ h2 .g { color: var(--green); }
 .about-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
 .about-cols p { font-size: 0.95rem; font-weight: 300; color: var(--ink-mid); line-height: 1.85; margin-bottom: 1rem; }
 .about-cols p:last-child { margin-bottom: 0; }
-.journey-item { display: grid; grid-template-columns: 3rem 1fr 1.6fr; gap: 2rem; padding: 2rem 0; border-bottom: 1px solid var(--border); align-items: start; }
+.journey-item { border-bottom: 1px solid var(--border); }
 .journey-item:first-child { border-top: 1px solid var(--border); }
-.j-num { font-family: var(--mono); font-size: 11px; color: var(--green); padding-top: 0.1rem; }
+.j-header { all: unset; box-sizing: border-box; display: grid; grid-template-columns: 3rem 1fr auto; gap: 2rem; align-items: center; width: 100%; padding: 2rem 0; cursor: pointer; }
+.j-header:focus-visible { outline: 2px solid var(--green); outline-offset: 4px; }
+.j-num { font-family: var(--mono); font-size: 11px; color: var(--green); }
 .j-title { font-size: 0.95rem; font-weight: 700; letter-spacing: -0.01em; color: var(--ink); text-transform: uppercase; margin-bottom: 0.25rem; }
 .j-sub { font-family: var(--mono); font-size: 10px; color: var(--ink-faint); letter-spacing: 0.06em; text-transform: uppercase; }
+.j-toggle-icon { font-family: var(--mono); font-size: 1.1rem; line-height: 1; color: var(--green); transition: transform 0.3s ease; flex-shrink: 0; }
+.journey-item.open .j-toggle-icon { transform: rotate(45deg); }
+.j-desc-wrap { overflow: hidden; max-height: 0; transition: max-height 0.35s ease; }
 .j-lead { font-size: 0.975rem; font-weight: 500; color: var(--ink); line-height: 1.5; margin-bottom: 0.75rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--border); }
-.j-desc { font-size: 0.875rem; font-weight: 300; color: var(--ink-mid); line-height: 1.8; }
+.j-desc { font-size: 0.875rem; font-weight: 300; color: var(--ink-mid); line-height: 1.8; padding: 0 0 2rem calc(3rem + 2rem); }
 .j-desc p { margin-bottom: 0.75rem; }
 .j-desc p:last-child { margin-bottom: 0; }
 .thoughts-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 0.5rem; }
@@ -193,8 +198,9 @@ footer { padding: 1.5rem 5rem 1.5rem 4rem; display: flex; align-items: center; j
 .ticker { padding: 0.7rem 1.5rem; gap: 2rem; }
 section { padding: 2.5rem 1.5rem; }
 .about-cols { grid-template-columns: 1fr; }
-.journey-item { grid-template-columns: 2.5rem 1fr; }
-.j-desc { grid-column: 1 / -1; }
+.journey-item { /* accordion layout already stacks; no override needed */ }
+.j-header { grid-template-columns: 2.5rem 1fr auto; }
+.j-desc { padding-left: 2.5rem; }
 .thinking-grid { grid-template-columns: 1fr; }
 .thoughts-grid { grid-template-columns: 1fr; }
 .thought-card.thought-featured { grid-column: span 1; }
@@ -243,7 +249,7 @@ footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; text-align: cente
 <p class="hero-card-text">The reset. Back to what I always loved. From the bottom. By choice.</p>
 </div>
 <div class="hero-card">
-<p class="hero-card-label">Local to Global</p>
+<p class="hero-card-label">2021</p>
 <p class="hero-card-text">From local government to global cloud. The scale changed. The discipline didn't.</p>
 </div>
 <div class="hero-card">
@@ -279,23 +285,32 @@ footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; text-align: cente
 <h2>How I<br><span class="g">Got Here.</span></h2>
 </div>
 <div class="journey-item">
+<button class="j-header" aria-expanded="false">
 <span class="j-num">01</span>
 <div>
 <p class="j-title">Technical foundations</p>
 <p class="j-sub">2011 onwards</p>
 </div>
+<span class="j-toggle-icon">+</span>
+</button>
+<div class="j-desc-wrap">
 <div class="j-desc">
 <p class="j-lead">A deliberate choice to start from the ground up. By 2015, leading a cloud transformation that changed everything.</p>
 <p>In 2011 I made the decision to enter the corporate technology world for the first time. I chose to start at the helpdesk, not because I had to, but because I knew it was the right foundation. Within a short time I was moving up, applying everything I had built over years of self-directed learning and previous experience.</p>
 <p>In 2015, the opportunity to lead a cloud transformation program was the turning point. It touched people, process, and technology all at once. It was bigger than anything I was ready for in that environment. I pushed through and delivered it anyway. That was the moment the career I had always wanted fully clicked into place.</p>
 </div>
 </div>
+</div>
 <div class="journey-item">
+<button class="j-header" aria-expanded="false">
 <span class="j-num">02</span>
 <div>
 <p class="j-title">Government · Shared Services</p>
 <p class="j-sub">A decade of public sector transformation</p>
 </div>
+<span class="j-toggle-icon">+</span>
+</button>
+<div class="j-desc-wrap">
 <div class="j-desc">
 <p class="j-lead">A decade of public sector transformation. Cloud was not welcome. I earned every inch.</p>
 <p>My approach was deliberate. Find the internal champions first. Prove it works in a contained environment before asking anyone to commit at scale. Remove every possible reason to say no. Always lead from the front. I wasn't going to ask engineers to change how they worked if I wasn't willing to work that way myself.</p>
@@ -303,12 +318,17 @@ footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; text-align: cente
 <p>What we built in that decade was real. Infrastructure as code across Azure and AWS. CI/CD pipelines replacing manual provisioning. Hydra, a bespoke cloud spend platform. A partnership with ACT Health through the EPIC Digital Health Record implementation. Cloud and Office 365 transformations across ACT Education and ACT CIT. The cultural shift in engineering is what I'm proudest of, and the team that grew out of it.</p>
 </div>
 </div>
+</div>
 <div class="journey-item">
+<button class="j-header" aria-expanded="false">
 <span class="j-num">03</span>
 <div>
 <p class="j-title">Capability building</p>
 <p class="j-sub">The people chapter</p>
 </div>
+<span class="j-toggle-icon">+</span>
+</button>
+<div class="j-desc-wrap">
 <div class="j-desc">
 <p class="j-lead">Invested in the ones others overlooked. Some ended up at AWS and Microsoft. That's the metric that matters.</p>
 <p>When I moved into a director-level position, I made a deliberate choice about who to invest in. Not the obvious candidates. The helpdesk staff. The engineers two or three years into their careers with no bad habits yet, but with trajectories I could see clearly even if they couldn't.</p>
@@ -317,12 +337,17 @@ footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; text-align: cente
 <p>Some of them went on to roles at AWS and Microsoft. Some I no longer needed to lead because they had simply outgrown me. That's the outcome I was aiming for.</p>
 </div>
 </div>
+</div>
 <div class="journey-item">
+<button class="j-header" aria-expanded="false">
 <span class="j-num">04</span>
 <div>
 <p class="j-title">Microsoft Azure</p>
 <p class="j-sub">Enterprise program leadership at global scale</p>
 </div>
+<span class="j-toggle-icon">+</span>
+</button>
+<div class="j-desc-wrap">
 <div class="j-desc">
 <p class="j-lead">From consumer to contributor. Now helping shape the infrastructure the world runs on.</p>
 <p>The shift that surprised me most wasn't the scale. It was the perspective. I spent a decade inside government helping organisations get the most out of Microsoft technology. Now I'm on the other side, helping shape it. That transition, from consumer to contributor, changed how I see the entire industry.</p>
@@ -331,16 +356,22 @@ footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; text-align: cente
 <p>That last part matters to me. Eliminating ambiguity for whoever comes next isn't a nice-to-have. It's part of the job.</p>
 </div>
 </div>
+</div>
 <div class="journey-item">
+<button class="j-header" aria-expanded="false">
 <span class="j-num">05</span>
 <div>
 <p class="j-title">AI and systems thinking</p>
 <p class="j-sub">Where it's all heading</p>
 </div>
+<span class="j-toggle-icon">+</span>
+</button>
+<div class="j-desc-wrap">
 <div class="j-desc">
 <p class="j-lead">Started with curiosity. Couldn't stop. Applying the same discipline to AI that I've used across government and global infrastructure.</p>
 <p>It started with curiosity. The same pattern I recognise from cloud in 2015. Once something clicks as genuinely important, I go deep. What I kept finding was that the AI conversation was stuck on tools. Nobody was asking the harder question: how do you actually build an operating model around this?</p>
 <p>That's the question I'm building toward. As a practitioner applying program discipline to a space most people are still figuring out. AI that augments how I think, decide, and execute. Not AI that replaces the judgement I've spent fifteen years developing.</p>
+</div>
 </div>
 </div>
 </section>
@@ -531,5 +562,31 @@ footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; text-align: cente
 </footer>
 </div>
 </div>
+<script>
+document.querySelectorAll('#journey .j-header').forEach(function (header) {
+  var item = header.closest('.journey-item');
+  var wrap = item.querySelector('.j-desc-wrap');
+  header.addEventListener('click', function () {
+    var isOpen = item.classList.contains('open');
+    if (isOpen) {
+      wrap.style.maxHeight = wrap.scrollHeight + 'px';
+      requestAnimationFrame(function () {
+        wrap.style.maxHeight = '0px';
+      });
+      item.classList.remove('open');
+      header.setAttribute('aria-expanded', 'false');
+    } else {
+      wrap.style.maxHeight = wrap.scrollHeight + 'px';
+      item.classList.add('open');
+      header.setAttribute('aria-expanded', 'true');
+    }
+  });
+  wrap.addEventListener('transitionend', function () {
+    if (item.classList.contains('open')) {
+      wrap.style.maxHeight = 'none';
+    }
+  });
+});
+</script>
 </body>
 </html>
