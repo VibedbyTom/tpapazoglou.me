@@ -95,11 +95,12 @@ padding-bottom: 3rem;
 border-bottom: 1px solid var(--border);
 }
 .hero-eyebrow { font-family: var(--mono); font-size: 11px; color: var(--green); letter-spacing: 0.1em; margin-bottom: 1.75rem; display: block; }
-h1 { font-family: var(--sans); font-size: clamp(3.2rem, 5.5vw, 5.5rem); font-weight: 800; line-height: 0.93; letter-spacing: -0.04em; text-transform: uppercase; color: var(--ink); }
+h1 { font-family: var(--sans); font-size: clamp(2.6rem, 4.6vw, 4.6rem); font-weight: 800; line-height: 0.93; letter-spacing: -0.04em; text-transform: uppercase; color: var(--ink); }
 h1 .g { color: var(--green); }
 h1 .outline { -webkit-text-stroke: 2.5px var(--ink); color: transparent; }
 .hero-divider { width: 28px; height: 2px; background: var(--green); margin-bottom: 1.5rem; }
 .hero-body { font-size: 1rem; font-weight: 300; color: var(--ink-mid); line-height: 1.8; margin-bottom: 1.75rem; }
+.hero-byline { font-family: var(--mono); font-size: 11px; color: var(--ink-faint); letter-spacing: 0.1em; display: block; margin-top: 1.5rem; }
 .hero-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 2rem; }
 .tag { font-family: var(--mono); font-size: 10px; letter-spacing: 0.05em; padding: 4px 10px; border: 1px solid var(--green-border); color: var(--green); background: var(--green-light); border-radius: 2px; }
 .hero-actions { display: flex; gap: 0.6rem; flex-wrap: wrap; }
@@ -108,7 +109,7 @@ h1 .outline { -webkit-text-stroke: 2.5px var(--ink); color: transparent; }
 .btn-primary:hover { background: #333; border-color: #333; }
 .btn-outline { background: transparent; color: var(--ink); border: 1px solid var(--border); }
 .btn-outline:hover { border-color: var(--ink-mid); }
-.hero-cards { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1px; background: var(--border); border-top: 1px solid var(--border); }
+.hero-cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--border); border-top: 1px solid var(--border); }
 .hero-card { background: var(--green); padding: 1.75rem 1.5rem; display: flex; flex-direction: column; gap: 0.6rem; }
 .hero-card-label { font-family: var(--sans); font-size: clamp(0.9rem, 1.6vw, 1.3rem); font-weight: 800; letter-spacing: -0.02em; text-transform: uppercase; color: #fff; line-height: 1; margin-bottom: 0.5rem; }
 .hero-card-text { font-family: var(--sans); font-size: 0.875rem; font-weight: 400; color: rgba(255,255,255,0.9); line-height: 1.6; }
@@ -131,17 +132,17 @@ h2 .g { color: var(--green); }
 .about-cols p:last-child { margin-bottom: 0; }
 .journey-item { border-bottom: 1px solid var(--border); }
 .journey-item:first-child { border-top: 1px solid var(--border); }
-.j-header { all: unset; box-sizing: border-box; display: grid; grid-template-columns: 35fr 65fr; gap: 4rem; align-items: baseline; width: 100%; padding: 1.5rem 0; cursor: pointer; }
+.j-header { all: unset; box-sizing: border-box; display: grid; grid-template-columns: 35fr 65fr; gap: 4rem; align-items: baseline; width: 100%; padding: 1.5rem 0; padding-left: 1.5rem; cursor: pointer; }
 .j-header-main { display: flex; gap: 1.25rem; align-items: baseline; min-width: 0; }
-.j-header:hover .j-title { color: var(--green); }
+.j-header:hover .j-title { color: var(--green); font-weight: 800; }
+.j-header:hover .j-preview { color: var(--green); }
 .j-header:focus-visible { outline: 2px solid var(--green); outline-offset: 4px; }
-.j-num { font-family: var(--mono); font-size: 11px; color: var(--green); flex: 0 0 3rem; }
-.j-title { font-size: 0.95rem; font-weight: 700; letter-spacing: -0.01em; color: var(--ink); text-transform: uppercase; line-height: 1.3; transition: color 0.15s; }
-.j-preview { font-family: var(--mono); font-size: 10px; color: var(--ink-faint); letter-spacing: 0.06em; text-transform: uppercase; line-height: 1.6; }
+.j-title { font-size: 1.05rem; font-weight: 700; letter-spacing: -0.01em; color: var(--ink); text-transform: uppercase; line-height: 1.3; transition: color 0.15s; }
+.j-preview { font-family: var(--mono); font-size: 11px; color: var(--ink-faint); letter-spacing: 0.06em; text-transform: uppercase; line-height: 1.6; transition: color 0.15s; }
 .journey-item.open .j-preview { display: none; }
 .j-desc-wrap { overflow: hidden; max-height: 0; transition: max-height 0.35s ease; }
 .j-lead { font-size: 0.975rem; font-weight: 500; color: var(--ink); line-height: 1.5; margin-bottom: 0.75rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--border); }
-.j-desc { font-size: 0.875rem; font-weight: 300; color: var(--ink-mid); line-height: 1.8; padding: 0 0 2rem calc(3rem + 1.25rem); }
+.j-desc { font-size: 0.875rem; font-weight: 300; color: var(--ink-mid); line-height: 1.8; padding: 0 0 2rem 1.5rem; }
 .j-desc p { margin-bottom: 0.75rem; }
 .j-desc p:last-child { margin-bottom: 0; }
 .section-toggle { background: none; border: none; padding: 0; margin: 0; font: inherit; color: inherit; cursor: pointer; width: 100%; text-align: left; transition: opacity 0.15s; }
@@ -153,7 +154,7 @@ h2 .g { color: var(--green); }
 .section-grid-wrap { overflow: hidden; max-height: 0; transition: max-height 0.35s ease; }
 .thoughts-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 0.5rem; }
 .thought-card { background: var(--surface-2); border: 1px solid var(--border); border-radius: 2px; padding: 1.75rem; display: flex; flex-direction: column; gap: 0.75rem; transition: border-color 0.15s; }
-.thought-card:hover { border-color: var(--green-border); }
+.thought-card:hover { border-color: var(--green); border-width: 2px; }
 .thought-card.thought-featured { border-color: var(--green); background: var(--surface-2); }
 .thought-card.thought-network { grid-column: 1 / -1; background: var(--green); border-color: var(--green); }
 .thought-card.thought-network .thought-label { color: rgba(255,255,255,0.85); }
@@ -172,8 +173,12 @@ h2 .g { color: var(--green); }
 .thought-featured .thought-text { font-size: 1.05rem; font-weight: 400; }
 .thought-attr { font-family: var(--mono); font-size: 10px; color: var(--ink-faint); letter-spacing: 0.06em; margin-top: 0.25rem; }
 .writing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 0.5rem; }
-.writing-card { background: var(--surface-2); border: 1px solid var(--border); border-radius: 2px; padding: 1.75rem; display: flex; flex-direction: column; justify-content: space-between; min-height: 200px; transition: border-color 0.15s; }
-.writing-card:hover { border-color: var(--green-border); }
+.writing-card { background: var(--surface-2); border: 1px solid var(--border); border-radius: 2px; padding: 1.75rem; display: flex; flex-direction: column; justify-content: space-between; min-height: 200px; transition: background 0.15s, border-color 0.15s; }
+.writing-card:hover { background: var(--green); border-color: var(--green); }
+.writing-card:hover .wc-label { color: rgba(255,255,255,0.75); }
+.writing-card:hover .wc-title { color: #fff; }
+.writing-card:hover .wc-desc { color: rgba(255,255,255,0.85); }
+.writing-card:hover .wc-footer { color: #fff; }
 .writing-card a { text-decoration: none; color: inherit; display: flex; flex-direction: column; height: 100%; justify-content: space-between; }
 .wc-label { font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 0.75rem; }
 .wc-title { font-size: 0.9rem; font-weight: 700; letter-spacing: -0.01em; text-transform: uppercase; color: var(--ink); margin-bottom: 0.5rem; line-height: 1.3; }
@@ -185,16 +190,12 @@ h2 .g { color: var(--green); }
 .wcta-text .g { color: #6BBF9A; }
 .wcta-sub { font-size: 0.85rem; font-weight: 300; color: rgba(255,255,255,0.5); line-height: 1.7; }
 .contact-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1.25rem; margin-top: 0.5rem; }
-.contact-card { background: var(--surface-2); border: 1px solid var(--border); border-left: 3px solid var(--green); border-radius: 2px; padding: 1.1rem; display: flex; flex-direction: column; justify-content: space-between; min-height: 88px; text-decoration: none; color: var(--ink); transition: background 0.15s, border-color 0.15s; }
+.contact-card { background: var(--surface-2); border: 1px solid var(--border); border-left: 3px solid var(--green); border-radius: 2px; padding: 1.1rem; display: block; text-decoration: none; color: var(--ink); transition: background 0.15s, border-color 0.15s; }
 .contact-card:hover { background: var(--green); border-color: var(--green); }
 .contact-card:hover .contact-card-label { color: #fff; }
 .contact-card:hover .contact-card-desc { color: rgba(255,255,255,0.85); }
-.contact-card:hover .contact-card-arrow { color: #fff; }
-.contact-card-top {}
 .contact-card-label { font-family: var(--sans); font-size: 1.2rem; font-weight: 800; letter-spacing: -0.03em; text-transform: uppercase; color: var(--ink); margin-bottom: 0.5rem; line-height: 1; }
 .contact-card-desc { font-size: 0.8rem; font-weight: 300; color: var(--ink-mid); line-height: 1.6; }
-.contact-card-bottom { display: flex; align-items: center; justify-content: flex-end; margin-top: 1rem; }
-.contact-card-arrow { font-family: var(--mono); font-size: 16px; color: var(--green); font-weight: 400; transition: color 0.15s; }
 footer { padding: 1.5rem 5rem 1.5rem 4rem; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--border); }
 .footer-text { font-family: var(--mono); font-size: 10px; color: var(--ink-faint); letter-spacing: 0.06em; }
 @media (max-width: 860px) {
@@ -214,8 +215,7 @@ section { padding: 2.5rem 1.5rem; }
 .about-cols { grid-template-columns: 1fr; }
 .journey-item { /* accordion layout already stacks; no override needed */ }
 .j-header { grid-template-columns: 1fr; gap: 0.5rem; }
-.j-num { flex: 0 0 2.5rem; }
-.j-desc { padding-left: 2.5rem; }
+
 .thinking-grid { grid-template-columns: 1fr; }
 .thoughts-grid { grid-template-columns: 1fr; }
 .thought-card.thought-featured { grid-column: span 1; }
@@ -246,12 +246,12 @@ footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; text-align: cente
 <div class="hero" id="hero">
 <div class="hero-top">
 <div>
-<span class="hero-eyebrow">// Tom Papazoglou</span>
-<h1>Tech<span class="g">.</span><br>Leader<span class="g">.</span><br><span class="g">Builder.</span></h1>
+<h1>Tech<span class="g">.</span><br>Leader<span class="g">.</span><br>Builder<span class="g">.</span><br><span class="g">Curious.</span></h1>
 </div>
 <div>
 <div class="hero-divider"></div>
-<p class="hero-body">Most technology programs don't fail on the technical side. They fail on the human side. Unclear ownership, poor communication, and plans that look good on paper but can't hold up the moment real people start asking questions. That's the problem I solve.</p>
+<p class="hero-body">I have spent my career building clarity in complex technology environments, turning ambiguity into ownership, alignment, and execution.</p>
+<span class="hero-byline">// Tom Papazoglou</span>
 </div>
 </div>
 <div class="hero-cards">
@@ -271,10 +271,6 @@ footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; text-align: cente
 <p class="hero-card-label">15+ Years</p>
 <p class="hero-card-text">Fifteen years in. I don't need to know it all. I need to never stop wanting to.</p>
 </div>
-<div class="hero-card">
-<p class="hero-card-label">Hard Yakka</p>
-<p class="hero-card-text">From helpdesk to global infrastructure. Every step deliberate. Every scar earned.</p>
-</div>
 </div>
 </div>
 <section id="about">
@@ -283,8 +279,9 @@ footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; text-align: cente
 <span class="section-num">01 /</span>
 <h2>About<br><span class="g">Me.</span></h2>
 </div>
-<p class="pull-quote">"My parents had a sixth-grade education and an instinct for technology nobody taught them. At nine, they handed me a Commodore 64. I still have it."</p>
+<button class="pull-quote quote-toggle section-toggle" aria-expanded="false">"You learn things on the floor that you never learn anywhere else. How systems fail. How people behave under pressure."</button>
 </div>
+<div class="section-grid-wrap">
 <div class="about-cols">
 <div>
 <p>Somewhere between Australia and Greece, in the middle of a childhood spent moving between two worlds, my parents handed me a Commodore 64. I was nine years old. They had a sixth-grade education and grew up in a small Greek village. They still somehow knew that was the right thing to put in front of their son. I still have it. I taught myself BASIC, tinkered constantly, and when I wasn't learning I was gaming. Both felt equally important at the time.</p>
@@ -295,6 +292,7 @@ footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; text-align: cente
 <p>Today I lead programs inside Microsoft's global networking infrastructure. The kid who grew up between two countries with a Commodore 64 and a lot of curiosity ended up exactly where the curiosity was always pointing. Some things take time. They're worth it.</p>
 </div>
 </div>
+</div>
 </section>
 <section id="journey">
 <div class="section-top wide-heading">
@@ -302,12 +300,12 @@ footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; text-align: cente
 <span class="section-num">02 /</span>
 <h2>How I<br><span class="g">Got Here.</span></h2>
 </div>
-<p class="pull-quote">"The part of this story I'm proudest of isn't what I built. It's who I built it with."</p>
+<button class="pull-quote quote-toggle section-toggle" aria-expanded="false">"The part of this story I'm proudest of isn't what I built. It's who I built it with."</button>
 </div>
+<div class="section-grid-wrap">
 <div class="journey-item">
 <button class="j-header" aria-expanded="false">
 <span class="j-header-main">
-<span class="j-num">01</span>
 <p class="j-title">Technical<br>foundations</p>
 </span>
 <span class="j-preview">A deliberate choice to start from the ground up. By 2015, leading a cloud transformation that changed everything.</span>
@@ -323,7 +321,6 @@ footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; text-align: cente
 <div class="journey-item">
 <button class="j-header" aria-expanded="false">
 <span class="j-header-main">
-<span class="j-num">02</span>
 <p class="j-title">Government<br>Shared-Services</p>
 </span>
 <span class="j-preview">A decade of public sector transformation. Cloud was not welcome. I earned every inch.</span>
@@ -340,7 +337,6 @@ footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; text-align: cente
 <div class="journey-item">
 <button class="j-header" aria-expanded="false">
 <span class="j-header-main">
-<span class="j-num">03</span>
 <p class="j-title">Capability<br>building</p>
 </span>
 <span class="j-preview">Invested in the ones others overlooked. Some ended up at AWS and Microsoft. That's the metric that matters.</span>
@@ -358,7 +354,6 @@ footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; text-align: cente
 <div class="journey-item">
 <button class="j-header" aria-expanded="false">
 <span class="j-header-main">
-<span class="j-num">04</span>
 <p class="j-title">Microsoft<br>Azure Core</p>
 </span>
 <span class="j-preview">From consumer to contributor. Now helping shape the infrastructure the world runs on.</span>
@@ -376,7 +371,6 @@ footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; text-align: cente
 <div class="journey-item">
 <button class="j-header" aria-expanded="false">
 <span class="j-header-main">
-<span class="j-num">05</span>
 <p class="j-title">AI and<br>systems thinking</p>
 </span>
 <span class="j-preview">Started with curiosity. Couldn't stop. Applying the same discipline to AI that I've used across government and global infrastructure.</span>
@@ -386,6 +380,7 @@ footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; text-align: cente
 <p class="j-lead">Started with curiosity. Couldn't stop. Applying the same discipline to AI that I've used across government and global infrastructure.</p>
 <p>It started with curiosity. The same pattern I recognise from cloud in 2015. Once something clicks as genuinely important, I go deep. What I kept finding was that the AI conversation was stuck on tools. Nobody was asking the harder question: how do you actually build an operating model around this?</p>
 <p>That's the question I'm building toward. As a practitioner applying program discipline to a space most people are still figuring out. AI that augments how I think, decide, and execute. Not AI that replaces the judgement I've spent fifteen years developing.</p>
+</div>
 </div>
 </div>
 </div>
@@ -533,49 +528,24 @@ footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; text-align: cente
 </div>
 <div class="contact-grid">
 <a href="https://github.com/VibedbyTom" class="contact-card">
-<div class="contact-card-top">
 <p class="contact-card-label">GitHub</p>
 <p class="contact-card-desc">Where I dare to build and show.</p>
-</div>
-<div class="contact-card-bottom">
-<span class="contact-card-arrow">↗</span>
-</div>
 </a>
 <a href="https://x.com/tompap" class="contact-card">
-<div class="contact-card-top">
 <p class="contact-card-label">X</p>
 <p class="contact-card-desc">Short thoughts every now and then.</p>
-</div>
-<div class="contact-card-bottom">
-<span class="contact-card-arrow">↗</span>
-</div>
 </a>
 <a href="https://www.linkedin.com/in/tompap/" class="contact-card">
-<div class="contact-card-top">
 <p class="contact-card-label">LinkedIn</p>
 <p class="contact-card-desc">15 years of career in depth.</p>
-</div>
-<div class="contact-card-bottom">
-<span class="contact-card-arrow">↗</span>
-</div>
 </a>
 <a href="https://medium.com/@tompapazoglou" class="contact-card">
-<div class="contact-card-top">
 <p class="contact-card-label">Medium</p>
 <p class="contact-card-desc">Long-form thinking</p>
-</div>
-<div class="contact-card-bottom">
-<span class="contact-card-arrow">↗</span>
-</div>
 </a>
 <a href="mailto:hello@tpapazoglou.me" class="contact-card">
-<div class="contact-card-top">
 <p class="contact-card-label">Email</p>
 <p class="contact-card-desc">Reach out, say Hi!</p>
-</div>
-<div class="contact-card-bottom">
-<span class="contact-card-arrow">↗</span>
-</div>
 </a>
 </div>
 </section>
