@@ -122,28 +122,34 @@ section:last-of-type { border-bottom: none; }
 h2 { font-family: var(--sans); font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 800; letter-spacing: -0.03em; text-transform: uppercase; line-height: 0.95; color: var(--ink); }
 h2 .outline { -webkit-text-stroke: 2px var(--ink); color: transparent; }
 h2 .g { color: var(--green); }
-.about-pull { font-family: var(--sans); font-size: clamp(1rem, 1.6vw, 1.25rem); font-weight: 700; letter-spacing: -0.01em; line-height: 1.5; color: var(--ink); border-left: 3px solid var(--green); padding-left: 1.5rem; margin-bottom: 2.5rem; }
+.section-top { display: grid; grid-template-columns: 2fr 8fr; gap: 4rem; align-items: center; margin-bottom: 2.5rem; }
+.section-top.wide-heading { grid-template-columns: 35fr 65fr; }
+.section-top .section-meta { margin-bottom: 0; }
+.pull-quote { font-family: var(--sans); font-size: clamp(1rem, 1.6vw, 1.25rem); font-weight: 700; letter-spacing: -0.01em; line-height: 1.5; color: var(--ink); border-left: 3px solid var(--green); padding-left: 1.5rem; }
 .about-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
 .about-cols p { font-size: 0.95rem; font-weight: 300; color: var(--ink-mid); line-height: 1.85; margin-bottom: 1rem; }
 .about-cols p:last-child { margin-bottom: 0; }
 .journey-item { border-bottom: 1px solid var(--border); }
 .journey-item:first-child { border-top: 1px solid var(--border); }
-.j-header { all: unset; box-sizing: border-box; display: grid; grid-template-columns: 3rem 1fr auto; gap: 2rem; align-items: center; width: 100%; padding: 2rem 0; cursor: pointer; }
+.j-header { all: unset; box-sizing: border-box; display: grid; grid-template-columns: 35fr 65fr; gap: 4rem; align-items: baseline; width: 100%; padding: 1.5rem 0; cursor: pointer; }
+.j-header-main { display: flex; gap: 1.25rem; align-items: baseline; min-width: 0; }
+.j-header:hover .j-title { color: var(--green); }
 .j-header:focus-visible { outline: 2px solid var(--green); outline-offset: 4px; }
-.j-num { font-family: var(--mono); font-size: 11px; color: var(--green); }
-.j-title { font-size: 0.95rem; font-weight: 700; letter-spacing: -0.01em; color: var(--ink); text-transform: uppercase; margin-bottom: 0.25rem; }
-.j-sub { font-family: var(--mono); font-size: 10px; color: var(--ink-faint); letter-spacing: 0.06em; text-transform: uppercase; }
-.j-toggle-icon { font-family: var(--mono); font-size: 1.1rem; line-height: 1; color: var(--green); transition: transform 0.3s ease; flex-shrink: 0; }
-.journey-item.open .j-toggle-icon { transform: rotate(45deg); }
+.j-num { font-family: var(--mono); font-size: 11px; color: var(--green); flex: 0 0 3rem; }
+.j-title { font-size: 0.95rem; font-weight: 700; letter-spacing: -0.01em; color: var(--ink); text-transform: uppercase; line-height: 1.3; transition: color 0.15s; }
+.j-preview { font-family: var(--mono); font-size: 10px; color: var(--ink-faint); letter-spacing: 0.06em; text-transform: uppercase; line-height: 1.6; }
+.journey-item.open .j-preview { display: none; }
 .j-desc-wrap { overflow: hidden; max-height: 0; transition: max-height 0.35s ease; }
 .j-lead { font-size: 0.975rem; font-weight: 500; color: var(--ink); line-height: 1.5; margin-bottom: 0.75rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--border); }
-.j-desc { font-size: 0.875rem; font-weight: 300; color: var(--ink-mid); line-height: 1.8; padding: 0 0 2rem calc(3rem + 2rem); }
+.j-desc { font-size: 0.875rem; font-weight: 300; color: var(--ink-mid); line-height: 1.8; padding: 0 0 2rem calc(3rem + 1.25rem); }
 .j-desc p { margin-bottom: 0.75rem; }
 .j-desc p:last-child { margin-bottom: 0; }
-.section-toggle { background: none; border: none; padding: 0; margin: 0; font: inherit; color: inherit; cursor: pointer; width: 100%; text-align: left; }
+.section-toggle { background: none; border: none; padding: 0; margin: 0; font: inherit; color: inherit; cursor: pointer; width: 100%; text-align: left; transition: opacity 0.15s; }
 .section-toggle:focus-visible { outline: 2px solid var(--green); outline-offset: 4px; }
-.section-toggle-icon { font-family: var(--mono); font-size: 1.1rem; line-height: 1; color: var(--green); transition: transform 0.3s ease; margin-left: auto; flex-shrink: 0; }
-.section-toggle.open .section-toggle-icon { transform: rotate(45deg); }
+.section-toggle:hover { opacity: 0.7; }
+.section-toggle { align-items: center; }
+.quote-toggle { font-family: var(--sans); font-size: clamp(1rem, 1.6vw, 1.25rem); font-weight: 700; letter-spacing: -0.01em; line-height: 1.5; color: var(--ink); border-left: 3px solid var(--green); padding-left: 1.5rem; transition: color 0.15s, border-left-color 0.15s, border-left-width 0.15s; }
+.quote-toggle:hover { color: var(--green-dark); opacity: 1; border-left-color: var(--green-dark); border-left-width: 6px; font-weight: 800; }
 .section-grid-wrap { overflow: hidden; max-height: 0; transition: max-height 0.35s ease; }
 .thoughts-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 0.5rem; }
 .thought-card { background: var(--surface-2); border: 1px solid var(--border); border-radius: 2px; padding: 1.75rem; display: flex; flex-direction: column; gap: 0.75rem; transition: border-color 0.15s; }
@@ -178,15 +184,17 @@ h2 .g { color: var(--green); }
 .wcta-text { font-size: 1.3rem; font-weight: 700; letter-spacing: -0.02em; text-transform: uppercase; line-height: 1.2; color: #fff; }
 .wcta-text .g { color: #6BBF9A; }
 .wcta-sub { font-size: 0.85rem; font-weight: 300; color: rgba(255,255,255,0.5); line-height: 1.7; }
-.contact-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1.5rem; margin-top: 0.5rem; }
-.contact-card { background: var(--surface-2); border: 1px solid var(--border); border-left: 3px solid var(--green); border-radius: 2px; padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between; min-height: 120px; text-decoration: none; color: var(--ink); transition: background 0.15s; }
-.contact-card:hover { background: var(--green-light); }
+.contact-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1.25rem; margin-top: 0.5rem; }
+.contact-card { background: var(--surface-2); border: 1px solid var(--border); border-left: 3px solid var(--green); border-radius: 2px; padding: 1.1rem; display: flex; flex-direction: column; justify-content: space-between; min-height: 88px; text-decoration: none; color: var(--ink); transition: background 0.15s, border-color 0.15s; }
+.contact-card:hover { background: var(--green); border-color: var(--green); }
+.contact-card:hover .contact-card-label { color: #fff; }
+.contact-card:hover .contact-card-desc { color: rgba(255,255,255,0.85); }
+.contact-card:hover .contact-card-arrow { color: #fff; }
 .contact-card-top {}
-.contact-card-label { font-family: var(--sans); font-size: 1.4rem; font-weight: 800; letter-spacing: -0.03em; text-transform: uppercase; color: var(--ink); margin-bottom: 0.6rem; line-height: 1; }
-.contact-card-desc { font-size: 0.85rem; font-weight: 300; color: var(--ink-mid); line-height: 1.7; }
-.contact-card-bottom { display: flex; align-items: center; justify-content: space-between; margin-top: 1.5rem; }
-.contact-card-mono { font-family: var(--mono); font-size: 10px; color: var(--ink-faint); letter-spacing: 0.08em; text-transform: uppercase; }
-.contact-card-arrow { font-family: var(--mono); font-size: 18px; color: var(--green); font-weight: 400; }
+.contact-card-label { font-family: var(--sans); font-size: 1.2rem; font-weight: 800; letter-spacing: -0.03em; text-transform: uppercase; color: var(--ink); margin-bottom: 0.5rem; line-height: 1; }
+.contact-card-desc { font-size: 0.8rem; font-weight: 300; color: var(--ink-mid); line-height: 1.6; }
+.contact-card-bottom { display: flex; align-items: center; justify-content: flex-end; margin-top: 1rem; }
+.contact-card-arrow { font-family: var(--mono); font-size: 16px; color: var(--green); font-weight: 400; transition: color 0.15s; }
 footer { padding: 1.5rem 5rem 1.5rem 4rem; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--border); }
 .footer-text { font-family: var(--mono); font-size: 10px; color: var(--ink-faint); letter-spacing: 0.06em; }
 @media (max-width: 860px) {
@@ -198,13 +206,15 @@ footer { padding: 1.5rem 5rem 1.5rem 4rem; display: flex; align-items: center; j
 .rail-pip { display: none; }
 .hero { padding: 2.5rem 1.5rem 0; }
 .hero-top { grid-template-columns: 1fr; gap: 2rem; padding-bottom: 2rem; }
+.section-top, .section-top.wide-heading { grid-template-columns: 1fr; gap: 1.5rem; }
 .hero-cards { grid-template-columns: repeat(2, 1fr); }
 .stat + .stat { padding-left: 1rem; }
 .ticker { padding: 0.7rem 1.5rem; gap: 2rem; }
 section { padding: 2.5rem 1.5rem; }
 .about-cols { grid-template-columns: 1fr; }
 .journey-item { /* accordion layout already stacks; no override needed */ }
-.j-header { grid-template-columns: 2.5rem 1fr auto; }
+.j-header { grid-template-columns: 1fr; gap: 0.5rem; }
+.j-num { flex: 0 0 2.5rem; }
 .j-desc { padding-left: 2.5rem; }
 .thinking-grid { grid-template-columns: 1fr; }
 .thoughts-grid { grid-template-columns: 1fr; }
@@ -241,7 +251,7 @@ footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; text-align: cente
 </div>
 <div>
 <div class="hero-divider"></div>
-<p class="hero-body">Most technology programs don't fail on the technical side. They fail on the human side. Unclear ownership, poor communication, and plans that look good on paper but can't survive contact with reality. That's the problem I solve.</p>
+<p class="hero-body">Most technology programs don't fail on the technical side. They fail on the human side. Unclear ownership, poor communication, and plans that look good on paper but can't hold up the moment real people start asking questions. That's the problem I solve.</p>
 </div>
 </div>
 <div class="hero-cards">
@@ -268,14 +278,16 @@ footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; text-align: cente
 </div>
 </div>
 <section id="about">
+<div class="section-top wide-heading">
 <div class="section-meta">
 <span class="section-num">01 /</span>
 <h2>About<br><span class="g">Me.</span></h2>
 </div>
-<p class="about-pull">"An immigrant with a sixth-grade education gave his nine-year-old son a Commodore 64. That single decision changed everything. I still have it."</p>
+<p class="pull-quote">"My parents had a sixth-grade education and an instinct for technology nobody taught them. At nine, they handed me a Commodore 64. I still have it."</p>
+</div>
 <div class="about-cols">
 <div>
-<p>Somewhere between Australia and Greece, in the middle of a childhood spent moving between two worlds, my father handed me a Commodore 64. I was nine years old. He had a sixth-grade education and grew up in a small Greek village. He still somehow knew that was the right thing to put in front of his son. I still have it. I taught myself BASIC, tinkered constantly, and when I wasn't learning I was gaming. Both felt equally important at the time.</p>
+<p>Somewhere between Australia and Greece, in the middle of a childhood spent moving between two worlds, my parents handed me a Commodore 64. I was nine years old. They had a sixth-grade education and grew up in a small Greek village. They still somehow knew that was the right thing to put in front of their son. I still have it. I taught myself BASIC, tinkered constantly, and when I wasn't learning I was gaming. Both felt equally important at the time.</p>
 <p>The early 90s found me in Greece studying IT. DOS commands and Windows 3.1, the building blocks of a field I was certain I wanted to be part of. Life had other ideas. But the passion never left. It just went quiet for a while, kept alive as a hobby until 2010 when I decided the longer road had gone on long enough.</p>
 </div>
 <div>
@@ -285,18 +297,20 @@ footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; text-align: cente
 </div>
 </section>
 <section id="journey">
+<div class="section-top wide-heading">
 <div class="section-meta">
 <span class="section-num">02 /</span>
 <h2>How I<br><span class="g">Got Here.</span></h2>
 </div>
+<p class="pull-quote">"The part of this story I'm proudest of isn't what I built. It's who I built it with."</p>
+</div>
 <div class="journey-item">
 <button class="j-header" aria-expanded="false">
+<span class="j-header-main">
 <span class="j-num">01</span>
-<div>
-<p class="j-title">Technical foundations</p>
-<p class="j-sub">2011 onwards</p>
-</div>
-<span class="j-toggle-icon">+</span>
+<p class="j-title">Technical<br>foundations</p>
+</span>
+<span class="j-preview">A deliberate choice to start from the ground up. By 2015, leading a cloud transformation that changed everything.</span>
 </button>
 <div class="j-desc-wrap">
 <div class="j-desc">
@@ -308,12 +322,11 @@ footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; text-align: cente
 </div>
 <div class="journey-item">
 <button class="j-header" aria-expanded="false">
+<span class="j-header-main">
 <span class="j-num">02</span>
-<div>
-<p class="j-title">Government · Shared Services</p>
-<p class="j-sub">A decade of public sector transformation</p>
-</div>
-<span class="j-toggle-icon">+</span>
+<p class="j-title">Government<br>Shared-Services</p>
+</span>
+<span class="j-preview">A decade of public sector transformation. Cloud was not welcome. I earned every inch.</span>
 </button>
 <div class="j-desc-wrap">
 <div class="j-desc">
@@ -326,12 +339,11 @@ footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; text-align: cente
 </div>
 <div class="journey-item">
 <button class="j-header" aria-expanded="false">
+<span class="j-header-main">
 <span class="j-num">03</span>
-<div>
-<p class="j-title">Capability building</p>
-<p class="j-sub">The people chapter</p>
-</div>
-<span class="j-toggle-icon">+</span>
+<p class="j-title">Capability<br>building</p>
+</span>
+<span class="j-preview">Invested in the ones others overlooked. Some ended up at AWS and Microsoft. That's the metric that matters.</span>
 </button>
 <div class="j-desc-wrap">
 <div class="j-desc">
@@ -345,12 +357,11 @@ footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; text-align: cente
 </div>
 <div class="journey-item">
 <button class="j-header" aria-expanded="false">
+<span class="j-header-main">
 <span class="j-num">04</span>
-<div>
-<p class="j-title">Microsoft Azure</p>
-<p class="j-sub">Enterprise program leadership at global scale</p>
-</div>
-<span class="j-toggle-icon">+</span>
+<p class="j-title">Microsoft<br>Azure Core</p>
+</span>
+<span class="j-preview">From consumer to contributor. Now helping shape the infrastructure the world runs on.</span>
 </button>
 <div class="j-desc-wrap">
 <div class="j-desc">
@@ -364,12 +375,11 @@ footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; text-align: cente
 </div>
 <div class="journey-item">
 <button class="j-header" aria-expanded="false">
+<span class="j-header-main">
 <span class="j-num">05</span>
-<div>
-<p class="j-title">AI and systems thinking</p>
-<p class="j-sub">Where it's all heading</p>
-</div>
-<span class="j-toggle-icon">+</span>
+<p class="j-title">AI and<br>systems thinking</p>
+</span>
+<span class="j-preview">Started with curiosity. Couldn't stop. Applying the same discipline to AI that I've used across government and global infrastructure.</span>
 </button>
 <div class="j-desc-wrap">
 <div class="j-desc">
@@ -381,11 +391,13 @@ footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; text-align: cente
 </div>
 </section>
 <section id="thinking">
-<button class="section-meta section-toggle" aria-expanded="false">
+<div class="section-top wide-heading">
+<div class="section-meta">
 <span class="section-num">03 /</span>
 <h2>What I'm<br><span class="g">Thinking.</span></h2>
-<span class="section-toggle-icon">+</span>
-</button>
+</div>
+<button class="pull-quote quote-toggle section-toggle" aria-expanded="false">"If I can't explain it to the version of me that started on the helpdesk, I don't understand it."</button>
+</div>
 <div class="section-grid-wrap">
 <div class="thoughts-grid">
 <div class="thought-card thought-network">
@@ -439,11 +451,13 @@ footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; text-align: cente
 </div>
 </section>
 <section id="writing">
-<button class="section-meta section-toggle" aria-expanded="false">
+<div class="section-top wide-heading">
+<div class="section-meta">
 <span class="section-num">04 /</span>
 <h2>On<br><span class="g">Paper.</span></h2>
-<span class="section-toggle-icon">+</span>
-</button>
+</div>
+<button class="pull-quote quote-toggle section-toggle" aria-expanded="false">"Writing is how I check my own thinking. Saying it in my head was never enough proof I understood it."</button>
+</div>
 <div class="section-grid-wrap">
 <div class="writing-grid">
 <div class="writing-card">
@@ -510,58 +524,56 @@ footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; text-align: cente
 </div>
 </section>
 <section id="contact">
+<div class="section-top wide-heading">
 <div class="section-meta">
 <span class="section-num">05 /</span>
 <h2>Get In<br><span class="g">Touch.</span></h2>
+</div>
+<p class="pull-quote">"Say something interesting and I'll reply."</p>
 </div>
 <div class="contact-grid">
 <a href="https://github.com/VibedbyTom" class="contact-card">
 <div class="contact-card-top">
 <p class="contact-card-label">GitHub</p>
-<p class="contact-card-desc">Where I build in the open. AI systems, tools, and experiments.</p>
+<p class="contact-card-desc">Where I dare to build and show.</p>
 </div>
 <div class="contact-card-bottom">
-<span class="contact-card-mono">VibedbyTom</span>
 <span class="contact-card-arrow">↗</span>
 </div>
 </a>
 <a href="https://x.com/tompap" class="contact-card">
 <div class="contact-card-top">
 <p class="contact-card-label">X</p>
-<p class="contact-card-desc">Shorter thoughts on technology, AI, and whatever's on my mind.</p>
+<p class="contact-card-desc">Short thoughts every now and then.</p>
 </div>
 <div class="contact-card-bottom">
-<span class="contact-card-mono">@tompap</span>
 <span class="contact-card-arrow">↗</span>
 </div>
 </a>
 <a href="https://www.linkedin.com/in/tompap/" class="contact-card">
 <div class="contact-card-top">
 <p class="contact-card-label">LinkedIn</p>
-<p class="contact-card-desc">Fifteen years of career. One feed. Follow for the unfiltered version.</p>
+<p class="contact-card-desc">15 years of career in depth.</p>
 </div>
 <div class="contact-card-bottom">
-<span class="contact-card-mono">in/tompap</span>
 <span class="contact-card-arrow">↗</span>
 </div>
 </a>
 <a href="https://medium.com/@tompapazoglou" class="contact-card">
 <div class="contact-card-top">
 <p class="contact-card-label">Medium</p>
-<p class="contact-card-desc">Long-form thinking on leadership, AI, and the lessons that only come from doing the work.</p>
+<p class="contact-card-desc">Long-form thinking</p>
 </div>
 <div class="contact-card-bottom">
-<span class="contact-card-mono">@tompapazoglou</span>
 <span class="contact-card-arrow">↗</span>
 </div>
 </a>
 <a href="mailto:hello@tpapazoglou.me" class="contact-card">
 <div class="contact-card-top">
 <p class="contact-card-label">Email</p>
-<p class="contact-card-desc">For conversations worth having.</p>
+<p class="contact-card-desc">Reach out, say Hi!</p>
 </div>
 <div class="contact-card-bottom">
-<span class="contact-card-mono">hello@tpapazoglou.me</span>
 <span class="contact-card-arrow">↗</span>
 </div>
 </a>
@@ -599,7 +611,7 @@ document.querySelectorAll('#journey .j-header').forEach(function (header) {
   });
 });
 document.querySelectorAll('.section-toggle').forEach(function (button) {
-  var wrap = button.nextElementSibling;
+  var wrap = button.closest('section').querySelector('.section-grid-wrap');
   button.addEventListener('click', function () {
     var isOpen = button.classList.contains('open');
     if (isOpen) {
