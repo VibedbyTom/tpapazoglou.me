@@ -6,13 +6,11 @@
 <title>Tom Papazoglou | Technology Leader</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='4' fill='%232A5C45'/><text x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' font-family='system-ui,sans-serif' font-weight='800' font-size='16' fill='white'>T</text></svg>">
 <meta name="description" content="Technology leader and TPM at Microsoft Azure. Systems builder, AI practitioner. 15+ years from local government to global infrastructure.">
-<!-- Open Graph -->
 <meta property="og:title" content="Tom Papazoglou | Technology Leader">
 <meta property="og:description" content="Technology leader and TPM at Microsoft Azure. Systems builder, AI practitioner. 15+ years from local government to global infrastructure.">
 <meta property="og:image" content="https://raw.githubusercontent.com/VibedbyTom/tpapazoglou.me/main/avatar.jpg">
 <meta property="og:url" content="https://tpapazoglou.me">
 <meta property="og:type" content="website">
-<!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Tom Papazoglou | Technology Leader">
 <meta name="twitter:description" content="Technology leader and TPM at Microsoft Azure. Systems builder, AI practitioner. 15+ years from local government to global infrastructure.">
@@ -84,6 +82,8 @@ text-decoration: none;
 transition: color 0.2s;
 }
 .rail-nav a:hover { color: rgba(255,255,255,0.9); }
+.rail-nav a.rail-cta { color: var(--green); }
+.rail-nav a.rail-cta:hover { color: #6BBF9A; }
 .rail-pip { width: 4px; height: 4px; border-radius: 50%; background: var(--green); }
 .hero { padding: 4rem 5rem 0 4rem; border-bottom: 1px solid var(--border); }
 .hero-top {
@@ -97,31 +97,18 @@ border-bottom: 1px solid var(--border);
 .hero-eyebrow { font-family: var(--mono); font-size: 11px; color: var(--green); letter-spacing: 0.1em; margin-bottom: 1.75rem; display: block; }
 h1 { font-family: var(--sans); font-size: clamp(2.6rem, 4.6vw, 4.6rem); font-weight: 800; line-height: 0.93; letter-spacing: -0.04em; text-transform: uppercase; color: var(--ink); }
 h1 .g { color: var(--green); }
-h1 .outline { -webkit-text-stroke: 2.5px var(--ink); color: transparent; }
 .hero-divider { width: 28px; height: 2px; background: var(--green); margin-bottom: 1.5rem; }
 .hero-body { font-size: 1rem; font-weight: 300; color: var(--ink-mid); line-height: 1.8; margin-bottom: 1.75rem; }
 .hero-byline { font-family: var(--mono); font-size: 11px; color: var(--ink-faint); letter-spacing: 0.1em; display: block; margin-top: 1.5rem; }
-.hero-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 2rem; }
-.tag { font-family: var(--mono); font-size: 10px; letter-spacing: 0.05em; padding: 4px 10px; border: 1px solid var(--green-border); color: var(--green); background: var(--green-light); border-radius: 2px; }
-.hero-actions { display: flex; gap: 0.6rem; flex-wrap: wrap; }
-.btn { display: inline-block; font-family: var(--sans); font-size: 12px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.6rem 1.4rem; text-decoration: none; border-radius: 2px; transition: all 0.18s; }
-.btn-primary { background: var(--ink); color: var(--bg); border: 1px solid var(--ink); }
-.btn-primary:hover { background: #333; border-color: #333; }
-.btn-outline { background: transparent; color: var(--ink); border: 1px solid var(--border); }
-.btn-outline:hover { border-color: var(--ink-mid); }
 .hero-cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--border); border-top: 1px solid var(--border); }
 .hero-card { background: var(--green); padding: 1.75rem 1.5rem; display: flex; flex-direction: column; gap: 0.6rem; }
 .hero-card-label { font-family: var(--sans); font-size: clamp(0.9rem, 1.6vw, 1.3rem); font-weight: 800; letter-spacing: -0.02em; text-transform: uppercase; color: #fff; line-height: 1; margin-bottom: 0.5rem; }
 .hero-card-text { font-family: var(--sans); font-size: 0.875rem; font-weight: 400; color: rgba(255,255,255,0.9); line-height: 1.6; }
-.ticker { background: var(--green); padding: 0.7rem 4rem; display: flex; gap: 3rem; overflow: hidden; }
-.ticker-item { font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; color: rgba(255,255,255,0.5); white-space: nowrap; text-transform: uppercase; }
-.ticker-item span { color: rgba(255,255,255,0.9); }
 section { padding: 3rem 5rem 3rem 4rem; border-bottom: 1px solid var(--border); }
 section:last-of-type { border-bottom: none; }
 .section-meta { display: flex; align-items: baseline; gap: 1.5rem; margin-bottom: 2.5rem; }
 .section-num { font-family: var(--mono); font-size: 10px; color: var(--ink-faint); letter-spacing: 0.1em; white-space: nowrap; }
 h2 { font-family: var(--sans); font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 800; letter-spacing: -0.03em; text-transform: uppercase; line-height: 0.95; color: var(--ink); }
-h2 .outline { -webkit-text-stroke: 2px var(--ink); color: transparent; }
 h2 .g { color: var(--green); }
 .section-top { display: grid; grid-template-columns: 2fr 8fr; gap: 4rem; align-items: center; margin-bottom: 2.5rem; }
 .section-top.wide-heading { grid-template-columns: 35fr 65fr; }
@@ -130,65 +117,22 @@ h2 .g { color: var(--green); }
 .about-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
 .about-cols p { font-size: 0.95rem; font-weight: 300; color: var(--ink-mid); line-height: 1.85; margin-bottom: 1rem; }
 .about-cols p:last-child { margin-bottom: 0; }
-.journey-item { border-bottom: 1px solid var(--border); }
+/* Journey — now always expanded, no accordion */
+.journey-item { border-bottom: 1px solid var(--border); padding: 1.75rem 0 1.75rem 1.5rem; display: grid; grid-template-columns: 35fr 65fr; gap: 4rem; align-items: start; }
 .journey-item:first-child { border-top: 1px solid var(--border); }
-.j-header { all: unset; box-sizing: border-box; display: grid; grid-template-columns: 35fr 65fr; gap: 4rem; align-items: baseline; width: 100%; padding: 1.5rem 0; padding-left: 1.5rem; cursor: pointer; }
-.j-header-main { display: flex; gap: 1.25rem; align-items: baseline; min-width: 0; }
-.j-header:hover .j-title { color: var(--green); font-weight: 800; }
-.j-header:hover .j-preview { color: var(--green); }
-.j-header:focus-visible { outline: 2px solid var(--green); outline-offset: 4px; }
-.j-title { font-size: 1.05rem; font-weight: 700; letter-spacing: -0.01em; color: var(--ink); text-transform: uppercase; line-height: 1.3; transition: color 0.15s; }
-.j-preview { font-family: var(--mono); font-size: 11px; color: var(--ink-faint); letter-spacing: 0.06em; text-transform: uppercase; line-height: 1.6; transition: color 0.15s; }
-.journey-item.open .j-preview { display: none; }
-.j-desc-wrap { overflow: hidden; max-height: 0; transition: max-height 0.35s ease; }
+.j-title { font-size: 1.05rem; font-weight: 700; letter-spacing: -0.01em; color: var(--ink); text-transform: uppercase; line-height: 1.3; }
+.j-desc { font-size: 0.875rem; font-weight: 300; color: var(--ink-mid); line-height: 1.8; }
 .j-lead { font-size: 0.975rem; font-weight: 500; color: var(--ink); line-height: 1.5; margin-bottom: 0.75rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--border); }
-.j-desc { font-size: 0.875rem; font-weight: 300; color: var(--ink-mid); line-height: 1.8; padding: 0 0 2rem 1.5rem; }
 .j-desc p { margin-bottom: 0.75rem; }
 .j-desc p:last-child { margin-bottom: 0; }
-.section-toggle { background: none; border: none; padding: 0; margin: 0; font: inherit; color: inherit; cursor: pointer; width: 100%; text-align: left; transition: opacity 0.15s; }
-.section-toggle:focus-visible { outline: 2px solid var(--green); outline-offset: 4px; }
-.section-toggle:hover { opacity: 0.7; }
-.section-toggle { align-items: center; }
-.quote-toggle { font-family: var(--sans); font-size: clamp(1rem, 1.6vw, 1.25rem); font-weight: 700; letter-spacing: -0.01em; line-height: 1.5; color: var(--ink); border-left: 3px solid var(--green); padding-left: 1.5rem; transition: color 0.15s, border-left-color 0.15s, border-left-width 0.15s; }
-.quote-toggle:hover { color: var(--green-dark); opacity: 1; border-left-color: var(--green-dark); border-left-width: 6px; font-weight: 800; }
-.section-grid-wrap { overflow: hidden; max-height: 0; transition: max-height 0.35s ease; }
-.thoughts-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 0.5rem; }
-.thought-card { background: var(--surface-2); border: 1px solid var(--border); border-radius: 2px; padding: 1.75rem; display: flex; flex-direction: column; gap: 0.75rem; transition: border-color 0.15s; }
-.thought-card:hover { border-color: var(--green); border-width: 2px; }
-.thought-card.thought-featured { border-color: var(--green); background: var(--surface-2); }
-.thought-card.thought-network { grid-column: 1 / -1; background: var(--green); border-color: var(--green); }
-.thought-card.thought-network .thought-label { color: rgba(255,255,255,0.85); }
-.thought-card.thought-network .thought-text { color: #fff; font-size: 1.2rem; font-weight: 400; line-height: 1.6; }
-.thought-card.thought-network .thought-attr { color: rgba(255,255,255,0.55); }
-.thought-card.thought-dark { background: var(--green); border-color: var(--green); }
-.thought-card.thought-dark .thought-label { color: rgba(255,255,255,0.85); }
-.thought-card.thought-dark .thought-text { color: rgba(255,255,255,0.85); }
-.thought-card.thought-genx { grid-column: 1 / -1; }
-.thought-genx-inner { display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
-.thought-genx-content { flex: 1; display: flex; flex-direction: column; gap: 0.9rem; }
-.thought-genx-icon { flex-shrink: 0; opacity: 0.55; }
-.thought-text-accent { color: rgba(255,255,255,0.95) !important; font-weight: 500 !important; font-size: 1rem !important; }
-.thought-label { font-family: var(--sans); font-size: 0.9rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--ink); }
-.thought-text { font-size: 0.95rem; font-weight: 300; color: var(--ink); line-height: 1.7; }
-.thought-featured .thought-text { font-size: 1.05rem; font-weight: 400; }
-.thought-attr { font-family: var(--mono); font-size: 10px; color: var(--ink-faint); letter-spacing: 0.06em; margin-top: 0.25rem; }
-.writing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 0.5rem; }
-.writing-card { background: var(--surface-2); border: 1px solid var(--border); border-radius: 2px; padding: 1.75rem; display: flex; flex-direction: column; justify-content: space-between; min-height: 200px; transition: background 0.15s, border-color 0.15s; }
-.writing-card:hover { background: var(--green); border-color: var(--green); }
-.writing-card:hover .wc-label { color: rgba(255,255,255,0.75); }
-.writing-card:hover .wc-title { color: #fff; }
-.writing-card:hover .wc-desc { color: rgba(255,255,255,0.85); }
-.writing-card:hover .wc-footer { color: #fff; }
-.writing-card a { text-decoration: none; color: inherit; display: flex; flex-direction: column; height: 100%; justify-content: space-between; }
-.wc-label { font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 0.75rem; }
-.wc-title { font-size: 0.9rem; font-weight: 700; letter-spacing: -0.01em; text-transform: uppercase; color: var(--ink); margin-bottom: 0.5rem; line-height: 1.3; }
-.wc-desc { font-size: 0.8rem; font-weight: 300; color: var(--ink-mid); line-height: 1.7; flex: 1; }
-.wc-footer { font-family: var(--mono); font-size: 10px; color: var(--green); letter-spacing: 0.08em; text-transform: uppercase; margin-top: 1.25rem; }
-.writing-cta { grid-column: 1 / -1; background: var(--ink); border-radius: 2px; padding: 2rem 2.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
-.wcta-label { font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 1rem; }
-.wcta-text { font-size: 1.3rem; font-weight: 700; letter-spacing: -0.02em; text-transform: uppercase; line-height: 1.2; color: #fff; }
-.wcta-text .g { color: #6BBF9A; }
-.wcta-sub { font-size: 0.85rem; font-weight: 300; color: rgba(255,255,255,0.5); line-height: 1.7; }
+/* Blog CTA */
+.blog-cta { background: var(--ink); border-radius: 2px; padding: 2.75rem 3rem; display: grid; grid-template-columns: 1.2fr 1fr; gap: 3rem; align-items: center; }
+.blog-cta-label { font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 1rem; }
+.blog-cta-text { font-size: 1.6rem; font-weight: 800; letter-spacing: -0.02em; text-transform: uppercase; line-height: 1.15; color: #fff; }
+.blog-cta-text .g { color: #6BBF9A; }
+.blog-cta-sub { font-size: 0.9rem; font-weight: 300; color: rgba(255,255,255,0.55); line-height: 1.7; margin-bottom: 1.5rem; }
+.blog-cta-btn { display: inline-block; font-family: var(--sans); font-size: 12px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.7rem 1.6rem; text-decoration: none; border-radius: 2px; background: var(--green); color: #fff; border: 1px solid var(--green); transition: all 0.18s; }
+.blog-cta-btn:hover { background: #fff; color: var(--ink); border-color: #fff; }
 .contact-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1.25rem; margin-top: 0.5rem; }
 .contact-card { background: var(--surface-2); border: 1px solid var(--border); border-left: 3px solid var(--green); border-radius: 2px; padding: 1.1rem; display: block; text-decoration: none; color: var(--ink); transition: background 0.15s, border-color 0.15s; }
 .contact-card:hover { background: var(--green); border-color: var(--green); }
@@ -209,22 +153,11 @@ footer { padding: 1.5rem 5rem 1.5rem 4rem; display: flex; align-items: center; j
 .hero-top { grid-template-columns: 1fr; gap: 2rem; padding-bottom: 2rem; }
 .section-top, .section-top.wide-heading { grid-template-columns: 1fr; gap: 1.5rem; }
 .hero-cards { grid-template-columns: repeat(2, 1fr); }
-.stat + .stat { padding-left: 1rem; }
-.ticker { padding: 0.7rem 1.5rem; gap: 2rem; }
 section { padding: 2.5rem 1.5rem; }
 .about-cols { grid-template-columns: 1fr; }
-.journey-item { /* accordion layout already stacks; no override needed */ }
-.j-header { grid-template-columns: 1fr; gap: 0.5rem; }
-
-.thinking-grid { grid-template-columns: 1fr; }
-.thoughts-grid { grid-template-columns: 1fr; }
-.thought-card.thought-featured { grid-column: span 1; }
-.thought-card.thought-genx { grid-column: span 1; }
-.thought-genx-inner { flex-direction: column; }
-.thought-genx-icon { display: none; }
-.writing-grid { grid-template-columns: 1fr; }
+.journey-item { grid-template-columns: 1fr; gap: 0.75rem; }
+.blog-cta { grid-template-columns: 1fr; gap: 1.5rem; padding: 2rem 1.75rem; }
 .contact-grid { grid-template-columns: 1fr; }
-.writing-cta { grid-template-columns: 1fr; gap: 1rem; }
 footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; text-align: center; }
 }
 </style>
@@ -236,8 +169,7 @@ footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; text-align: cente
 <ul class="rail-nav">
 <li><a href="#about">About</a></li>
 <li><a href="#journey">Journey</a></li>
-<li><a href="#thinking">Thinking</a></li>
-<li><a href="#writing">Writing</a></li>
+<li><a href="blog.html" class="rail-cta">Blog</a></li>
 <li><a href="#contact">Contact</a></li>
 </ul>
 <div class="rail-pip"></div>
@@ -273,15 +205,15 @@ footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; text-align: cente
 </div>
 </div>
 </div>
+
 <section id="about">
 <div class="section-top wide-heading">
 <div class="section-meta">
 <span class="section-num">01 /</span>
 <h2>About<br><span class="g">Me.</span></h2>
 </div>
-<button class="pull-quote quote-toggle section-toggle" aria-expanded="false">"You learn things on the floor that you never learn anywhere else. How systems fail. How people behave under pressure."</button>
+<p class="pull-quote">"You learn things on the floor that you never learn anywhere else. How systems fail. How people behave under pressure."</p>
 </div>
-<div class="section-grid-wrap">
 <div class="about-cols">
 <div>
 <p>Somewhere between Australia and Greece, in the middle of a childhood spent moving between two worlds, my parents handed me a Commodore 64. I was nine years old. They had a sixth-grade education and grew up in a small Greek village. They still somehow knew that was the right thing to put in front of their son. I still have it. I taught myself BASIC, tinkered constantly, and when I wasn't learning I was gaming. Both felt equally important at the time.</p>
@@ -292,40 +224,28 @@ footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; text-align: cente
 <p>Today I lead programs inside Microsoft's global networking infrastructure. The kid who grew up between two countries with a Commodore 64 and a lot of curiosity ended up exactly where the curiosity was always pointing. Some things take time. They're worth it.</p>
 </div>
 </div>
-</div>
 </section>
+
 <section id="journey">
 <div class="section-top wide-heading">
 <div class="section-meta">
 <span class="section-num">02 /</span>
 <h2>How I<br><span class="g">Got Here.</span></h2>
 </div>
-<button class="pull-quote quote-toggle section-toggle" aria-expanded="false">"The part of this story I'm proudest of isn't what I built. It's who I built it with."</button>
+<p class="pull-quote">"The part of this story I'm proudest of isn't what I built. It's who I built it with."</p>
 </div>
-<div class="section-grid-wrap">
+
 <div class="journey-item">
-<button class="j-header" aria-expanded="false">
-<span class="j-header-main">
 <p class="j-title">Technical<br>foundations</p>
-</span>
-<span class="j-preview">A deliberate choice to start from the ground up. By 2015, leading a cloud transformation that changed everything.</span>
-</button>
-<div class="j-desc-wrap">
 <div class="j-desc">
 <p class="j-lead">A deliberate choice to start from the ground up. By 2015, leading a cloud transformation that changed everything.</p>
 <p>In 2011 I made the decision to enter the corporate technology world for the first time. I chose to start at the helpdesk, not because I had to, but because I knew it was the right foundation. Within a short time I was moving up, applying everything I had built over years of self-directed learning and previous experience.</p>
 <p>In 2015, the opportunity to lead a cloud transformation program was the turning point. It touched people, process, and technology all at once. It was bigger than anything I was ready for in that environment. I pushed through and delivered it anyway. That was the moment the career I had always wanted fully clicked into place.</p>
 </div>
 </div>
-</div>
+
 <div class="journey-item">
-<button class="j-header" aria-expanded="false">
-<span class="j-header-main">
 <p class="j-title">Government<br>Shared-Services</p>
-</span>
-<span class="j-preview">A decade of public sector transformation. Cloud was not welcome. I earned every inch.</span>
-</button>
-<div class="j-desc-wrap">
 <div class="j-desc">
 <p class="j-lead">A decade of public sector transformation. Cloud was not welcome. I earned every inch.</p>
 <p>My approach was deliberate. Find the internal champions first. Prove it works in a contained environment before asking anyone to commit at scale. Remove every possible reason to say no. Always lead from the front. I wasn't going to ask engineers to change how they worked if I wasn't willing to work that way myself.</p>
@@ -333,15 +253,9 @@ footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; text-align: cente
 <p>What we built in that decade was real. Infrastructure as code across Azure and AWS. CI/CD pipelines replacing manual provisioning. Hydra, a bespoke cloud spend platform. A partnership with ACT Health through the EPIC Digital Health Record implementation. Cloud and Office 365 transformations across ACT Education and ACT CIT. The cultural shift in engineering is what I'm proudest of, and the team that grew out of it.</p>
 </div>
 </div>
-</div>
+
 <div class="journey-item">
-<button class="j-header" aria-expanded="false">
-<span class="j-header-main">
 <p class="j-title">Capability<br>building</p>
-</span>
-<span class="j-preview">Invested in the ones others overlooked. Some ended up at AWS and Microsoft. That's the metric that matters.</span>
-</button>
-<div class="j-desc-wrap">
 <div class="j-desc">
 <p class="j-lead">Invested in the ones others overlooked. Some ended up at AWS and Microsoft. That's the metric that matters.</p>
 <p>When I moved into a director-level position, I made a deliberate choice about who to invest in. Not the obvious candidates. The helpdesk staff. The engineers two or three years into their careers with no bad habits yet, but with trajectories I could see clearly even if they couldn't.</p>
@@ -350,15 +264,9 @@ footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; text-align: cente
 <p>Some of them went on to roles at AWS and Microsoft. Some I no longer needed to lead because they had simply outgrown me. That's the outcome I was aiming for.</p>
 </div>
 </div>
-</div>
+
 <div class="journey-item">
-<button class="j-header" aria-expanded="false">
-<span class="j-header-main">
 <p class="j-title">Microsoft<br>Azure Core</p>
-</span>
-<span class="j-preview">From consumer to contributor. Now helping shape the infrastructure the world runs on.</span>
-</button>
-<div class="j-desc-wrap">
 <div class="j-desc">
 <p class="j-lead">From consumer to contributor. Now helping shape the infrastructure the world runs on.</p>
 <p>The shift that surprised me most wasn't the scale. It was the perspective. I spent a decade inside government helping organisations get the most out of Microsoft technology. Now I'm on the other side, helping shape it. That transition, from consumer to contributor, changed how I see the entire industry.</p>
@@ -367,161 +275,41 @@ footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; text-align: cente
 <p>That last part matters to me. Eliminating ambiguity for whoever comes next isn't a nice-to-have. It's part of the job.</p>
 </div>
 </div>
-</div>
+
 <div class="journey-item">
-<button class="j-header" aria-expanded="false">
-<span class="j-header-main">
 <p class="j-title">AI and<br>systems thinking</p>
-</span>
-<span class="j-preview">Started with curiosity. Couldn't stop. Applying the same discipline to AI that I've used across government and global infrastructure.</span>
-</button>
-<div class="j-desc-wrap">
 <div class="j-desc">
 <p class="j-lead">Started with curiosity. Couldn't stop. Applying the same discipline to AI that I've used across government and global infrastructure.</p>
 <p>It started with curiosity. The same pattern I recognise from cloud in 2015. Once something clicks as genuinely important, I go deep. What I kept finding was that the AI conversation was stuck on tools. Nobody was asking the harder question: how do you actually build an operating model around this?</p>
 <p>That's the question I'm building toward. As a practitioner applying program discipline to a space most people are still figuring out. AI that augments how I think, decide, and execute. Not AI that replaces the judgement I've spent fifteen years developing.</p>
 </div>
 </div>
-</div>
-</div>
 </section>
-<section id="thinking">
+
+<section id="blog-cta">
 <div class="section-top wide-heading">
 <div class="section-meta">
 <span class="section-num">03 /</span>
-<h2>What I'm<br><span class="g">Thinking.</span></h2>
+<h2>The<br><span class="g">Writing.</span></h2>
 </div>
-<button class="pull-quote quote-toggle section-toggle" aria-expanded="false">"If I can't explain it to the version of me that started on the helpdesk, I don't understand it."</button>
+<p class="pull-quote">"Writing is how I check my own thinking. Saying it in my head was never enough proof I understood it."</p>
 </div>
-<div class="section-grid-wrap">
-<div class="thoughts-grid">
-<div class="thought-card thought-network">
-<p class="thought-label">On networks</p>
-<p class="thought-text">"The network is the runway. Without it, you're just showing up to the airport to have lunch."</p>
-<p class="thought-attr">A leader I have the privilege of working under.</p>
+<div class="blog-cta">
+<div>
+<p class="blog-cta-label">// The blog</p>
+<p class="blog-cta-text">Articles, and the<br>ideas <span class="g">behind them.</span></p>
 </div>
-<div class="thought-card">
-<p class="thought-label">On AI</p>
-<p class="thought-text">Most technology resistance isn't rational. It's emotional. I watched it with cloud in 2015. They even printed it on t-shirts: 'There is no cloud, it's just someone else's computer.' AI is no different. Until you address the anxiety, no implementation plan survives contact with the humans it depends on. The slogans will come. They always do.</p>
-</div>
-<div class="thought-card">
-<p class="thought-label">On change leadership</p>
-<p class="thought-text">Most change programs hand people a what and a how and wonder why nobody moves. I've never seen a successful transformation that skipped the why. People don't resist change. They resist being asked to change without understanding the reason.</p>
-</div>
-<div class="thought-card">
-<p class="thought-label">On ambiguity</p>
-<p class="thought-text">There is rarely a clear playbook at the frontier. My job is to write it, and leave it better than I found it.</p>
-</div>
-<div class="thought-card">
-<p class="thought-label">On TPM work</p>
-<p class="thought-text">A TPM is the most misunderstood role in technology. It's not coordination. It's not status updates. It's leading without authority on a moving train, in fog, with people who all think they're the driver. The ones who do it well make the impossible look like it was always the plan.</p>
-</div>
-<div class="thought-card">
-<p class="thought-label">On what TPMs actually do</p>
-<p class="thought-text">The great TPMs don't wait to be asked. They see around corners, define what's undefined, and bring enough intensity that momentum becomes contagious. Most people think it's about process. It's actually about people. The spreadsheet is the easy part.</p>
-</div>
-<div class="thought-card">
-<p class="thought-label">On building people</p>
-<p class="thought-text">Giving people an opportunity to thrive when nobody gave you that same opportunity yourself. That's not a management philosophy. That's personal.</p>
-</div>
-<div class="thought-card thought-dark thought-genx">
-<div class="thought-genx-inner">
-<div class="thought-genx-content">
-<p class="thought-label">On the generation that waited</p>
-<p class="thought-text">I'm a Gen X kid who grew up watching this future in movies that felt decades away. Terminator. WarGames. Star Wars. Battlestar Galactica. Knight Rider. The technology we dreamed about is no longer science fiction. I work on it every day. That kid had no idea he'd one day work on the infrastructure those technologies depend on. I don't take that lightly.</p>
-</div>
-<div class="thought-genx-icon" aria-hidden="true">
-<svg width="72" height="52" viewBox="0 0 72 52" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="0" y="0" width="26" height="6" fill="rgba(255,255,255,0.25)"/>
-<rect x="0" y="14" width="36" height="6" fill="rgba(255,255,255,0.2)"/>
-<rect x="0" y="28" width="10" height="6" fill="rgba(255,255,255,0.5)"/>
-<rect x="16" y="26" width="14" height="10" fill="rgba(255,255,255,0.95)"/>
-<rect x="34" y="29" width="8" height="5" fill="rgba(255,255,255,0.2)"/>
-<rect x="46" y="29" width="8" height="5" fill="rgba(255,255,255,0.1)"/>
-</svg>
-</div>
-</div>
-</div>
+<div>
+<p class="blog-cta-sub">Long-form thinking on technology leadership, TPM work, AI adoption and operating models. Plus the shorter observations I keep coming back to. All in one place.</p>
+<a href="blog.html" class="blog-cta-btn">Read the blog →</a>
 </div>
 </div>
 </section>
-<section id="writing">
-<div class="section-top wide-heading">
-<div class="section-meta">
-<span class="section-num">04 /</span>
-<h2>On<br><span class="g">Paper.</span></h2>
-</div>
-<button class="pull-quote quote-toggle section-toggle" aria-expanded="false">"Writing is how I check my own thinking. Saying it in my head was never enough proof I understood it."</button>
-</div>
-<div class="section-grid-wrap">
-<div class="writing-grid">
-<div class="writing-card">
-<a href="https://medium.com/@tompapazoglou/the-alignment-you-skip-on-day-zero-is-the-failure-you-explain-on-day-one-b126632378ee" target="_blank" rel="noopener">
-<div>
-<p class="wc-label">Article · Published</p>
-<p class="wc-title">The alignment you skip on day zero is the failure you explain on day one</p>
-<p class="wc-desc">The most important meeting in any transformation is the one that happens before the work starts. Not the kickoff. The alignment conversation nobody had.</p>
-</div>
-<p class="wc-footer">→ Read on Medium</p>
-</a>
-</div>
-<div class="writing-card">
-<a href="https://medium.com/@tompapazoglou/the-authority-gap-nobody-talks-about-52b91157a55d" target="_blank" rel="noopener">
-<div>
-<p class="wc-label">Article · Published</p>
-<p class="wc-title">The authority gap nobody talks about</p>
-<p class="wc-desc">Capability and authority rarely grow at the same pace. The gap between them shapes more careers than most people realise.</p>
-</div>
-<p class="wc-footer">→ Read on Medium</p>
-</a>
-</div>
-<div class="writing-card">
-<a href="https://medium.com/@tompapazoglou/the-people-nobody-saw-coming-b9c70511f2d6" target="_blank" rel="noopener">
-<div>
-<p class="wc-label">Article · Published</p>
-<p class="wc-title">The people nobody saw coming</p>
-<p class="wc-desc">Half of them came from the helpdesk. Nobody expected what they became.</p>
-</div>
-<p class="wc-footer">→ Read on Medium</p>
-</a>
-</div>
-<div class="writing-card">
-<div>
-<p class="wc-label">Article · Coming soon</p>
-<p class="wc-title">Building my personal AI operating system</p>
-<p class="wc-desc">Everyone is prompting. Very few are building. This is about designing an AI system that works for your life around the clock, not just when you open a chat window. The more it does, the further you reach.</p>
-</div>
-<p class="wc-footer">→ Medium</p>
-</div>
-<div class="writing-card">
-<div>
-<p class="wc-label">Article · Coming soon</p>
-<p class="wc-title">Human-in-the-loop: what it actually means</p>
-<p class="wc-desc">AI automation isn't about removing humans from the loop. It's about designing the loop so humans are in the right place at the right time. AI slop is real, it's wasteful, and it happens when humans are taken out of the equation too early.</p>
-</div>
-<p class="wc-footer">→ Medium</p>
-</div>
-<div class="writing-card">
-<div>
-<p class="wc-label">Article · Coming soon</p>
-<p class="wc-title">Why tokenomics matter in the era of AI</p>
-<p class="wc-desc">Every AI interaction has a cost. Most organisations aren't tracking it yet. We saw the same thing with cloud. FinOps was born out of that chaos. Tokenomics and LLMOps are the next frontier. Tokens are the new cloud credits. The bill is already running. Most people just haven't seen it yet.</p>
-</div>
-<p class="wc-footer">→ Medium</p>
-</div>
-<div class="writing-cta">
-<div>
-<p class="wcta-text">Technology leadership.<br>Systems thinking.<br><span class="g">AI and the future of work.</span></p>
-</div>
-<p class="wcta-sub">Some lessons cost years to learn. Everything here comes from doing the work. My son is entering this industry. I hope he finds something worth keeping.</p>
-</div>
-</div>
-</div>
-</section>
+
 <section id="contact">
 <div class="section-top wide-heading">
 <div class="section-meta">
-<span class="section-num">05 /</span>
+<span class="section-num">04 /</span>
 <h2>Get In<br><span class="g">Touch.</span></h2>
 </div>
 <p class="pull-quote">"Say something interesting and I'll reply."</p>
@@ -555,54 +343,5 @@ footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; text-align: cente
 </footer>
 </div>
 </div>
-<script>
-document.querySelectorAll('#journey .j-header').forEach(function (header) {
-  var item = header.closest('.journey-item');
-  var wrap = item.querySelector('.j-desc-wrap');
-  header.addEventListener('click', function () {
-    var isOpen = item.classList.contains('open');
-    if (isOpen) {
-      wrap.style.maxHeight = wrap.scrollHeight + 'px';
-      requestAnimationFrame(function () {
-        wrap.style.maxHeight = '0px';
-      });
-      item.classList.remove('open');
-      header.setAttribute('aria-expanded', 'false');
-    } else {
-      wrap.style.maxHeight = wrap.scrollHeight + 'px';
-      item.classList.add('open');
-      header.setAttribute('aria-expanded', 'true');
-    }
-  });
-  wrap.addEventListener('transitionend', function () {
-    if (item.classList.contains('open')) {
-      wrap.style.maxHeight = 'none';
-    }
-  });
-});
-document.querySelectorAll('.section-toggle').forEach(function (button) {
-  var wrap = button.closest('section').querySelector('.section-grid-wrap');
-  button.addEventListener('click', function () {
-    var isOpen = button.classList.contains('open');
-    if (isOpen) {
-      wrap.style.maxHeight = wrap.scrollHeight + 'px';
-      requestAnimationFrame(function () {
-        wrap.style.maxHeight = '0px';
-      });
-      button.classList.remove('open');
-      button.setAttribute('aria-expanded', 'false');
-    } else {
-      wrap.style.maxHeight = wrap.scrollHeight + 'px';
-      button.classList.add('open');
-      button.setAttribute('aria-expanded', 'true');
-    }
-  });
-  wrap.addEventListener('transitionend', function () {
-    if (button.classList.contains('open')) {
-      wrap.style.maxHeight = 'none';
-    }
-  });
-});
-</script>
 </body>
 </html>

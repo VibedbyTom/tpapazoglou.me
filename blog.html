@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog | Tom Papazoglou</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='4' fill='%232A5C45'/><text x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' font-family='system-ui,sans-serif' font-weight='800' font-size='16' fill='white'>T</text></svg>">
+<meta name="description" content="Writing by Tom Papazoglou on technology leadership, technical program management, AI adoption and operating models.">
+<meta property="og:title" content="Blog | Tom Papazoglou">
+<meta property="og:description" content="Writing on technology leadership, TPM work, AI adoption and operating models.">
+<meta property="og:image" content="https://raw.githubusercontent.com/VibedbyTom/tpapazoglou.me/main/avatar.jpg">
+<meta property="og:url" content="https://tpapazoglou.me/blog.html">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Blog | Tom Papazoglou">
+<meta name="twitter:description" content="Writing on technology leadership, TPM work, AI adoption and operating models.">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/VibedbyTom/tpapazoglou.me/main/avatar.jpg">
+<meta name="twitter:site" content="@tompap">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+--bg: #F4F3EF;
+--surface: #FAFAF7;
+--surface-2: #FFFFFF;
+--ink: #1A1A18;
+--ink-mid: #4A4A46;
+--ink-faint: #9A9A94;
+--border: #DDDBD4;
+--green: #2A5C45;
+--green-dark: #1E4332;
+--green-light: #E8F2EC;
+--green-border:#B8D0C0;
+--mono: 'IBM Plex Mono', monospace;
+--sans: 'Outfit', system-ui, sans-serif;
+}
+html { scroll-behavior: smooth; }
+body {
+font-family: var(--sans);
+background: var(--bg);
+color: var(--ink);
+font-size: 16px;
+line-height: 1.7;
+-webkit-font-smoothing: antialiased;
+}
+.shell { display: grid; grid-template-columns: 64px 1fr; min-height: 100vh; }
+.rail {
+background: var(--ink);
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: space-between;
+padding: 2rem 0;
+position: sticky;
+top: 0;
+height: 100vh;
+z-index: 100;
+}
+.rail-logo {
+writing-mode: vertical-rl;
+transform: rotate(180deg);
+font-family: var(--mono);
+font-size: 10px;
+letter-spacing: 0.1em;
+color: rgba(255,255,255,0.4);
+text-decoration: none;
+transition: color 0.2s;
+}
+.rail-logo:hover { color: #fff; }
+.rail-nav { display: flex; flex-direction: column; align-items: center; gap: 1.75rem; list-style: none; }
+.rail-nav a {
+writing-mode: vertical-rl;
+transform: rotate(180deg);
+font-family: var(--mono);
+font-size: 9px;
+letter-spacing: 0.12em;
+text-transform: uppercase;
+color: rgba(255,255,255,0.3);
+text-decoration: none;
+transition: color 0.2s;
+}
+.rail-nav a:hover { color: rgba(255,255,255,0.9); }
+.rail-nav a.rail-cta { color: var(--green); }
+.rail-nav a.rail-cta:hover { color: #6BBF9A; }
+.rail-pip { width: 4px; height: 4px; border-radius: 50%; background: var(--green); }
+/* Blog masthead */
+.masthead { padding: 3.5rem 5rem 3.5rem 4rem; border-bottom: 1px solid var(--border); }
+.masthead-back { font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--green); text-decoration: none; display: inline-block; margin-bottom: 2.5rem; }
+.masthead-back:hover { color: var(--green-dark); }
+.masthead-top { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+.masthead h1 { font-family: var(--sans); font-size: clamp(2.6rem, 5vw, 4.4rem); font-weight: 800; line-height: 0.93; letter-spacing: -0.04em; text-transform: uppercase; color: var(--ink); }
+.masthead h1 .g { color: var(--green); }
+.masthead-divider { width: 28px; height: 2px; background: var(--green); margin-bottom: 1.5rem; }
+.masthead-body { font-size: 1rem; font-weight: 300; color: var(--ink-mid); line-height: 1.8; }
+.masthead-byline { font-family: var(--mono); font-size: 11px; color: var(--ink-faint); letter-spacing: 0.1em; display: block; margin-top: 1.5rem; }
+section { padding: 3rem 5rem 3rem 4rem; border-bottom: 1px solid var(--border); }
+section:last-of-type { border-bottom: none; }
+.section-top { display: grid; grid-template-columns: 35fr 65fr; gap: 4rem; align-items: center; margin-bottom: 2.5rem; }
+.section-meta { display: flex; align-items: baseline; gap: 1.5rem; }
+.section-num { font-family: var(--mono); font-size: 10px; color: var(--ink-faint); letter-spacing: 0.1em; white-space: nowrap; }
+h2 { font-family: var(--sans); font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 800; letter-spacing: -0.03em; text-transform: uppercase; line-height: 0.95; color: var(--ink); }
+h2 .g { color: var(--green); }
+.section-lede { font-size: 0.95rem; font-weight: 300; color: var(--ink-mid); line-height: 1.8; }
+/* Post feed */
+.feed { border-top: 1px solid var(--border); }
+.post { border-bottom: 1px solid var(--border); }
+.post a, .post .post-inner { display: grid; grid-template-columns: 22fr 78fr; gap: 3rem; align-items: start; padding: 2rem 1.5rem; text-decoration: none; color: inherit; transition: background 0.15s; }
+.post a:hover { background: var(--green); }
+.post a:hover .post-title { color: #fff; }
+.post a:hover .post-excerpt { color: rgba(255,255,255,0.85); }
+.post a:hover .post-meta-label { color: rgba(255,255,255,0.6); }
+.post a:hover .post-read { color: #fff; }
+.post-meta { display: flex; flex-direction: column; gap: 0.5rem; }
+.post-meta-label { font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--green); }
+.post-meta-sub { font-family: var(--mono); font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-faint); }
+.post-title { font-size: 1.35rem; font-weight: 800; letter-spacing: -0.02em; text-transform: uppercase; line-height: 1.15; color: var(--ink); margin-bottom: 0.75rem; }
+.post-excerpt { font-size: 0.9rem; font-weight: 300; color: var(--ink-mid); line-height: 1.75; margin-bottom: 1rem; }
+.post-read { font-family: var(--mono); font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--green); }
+.post.is-soon .post-inner { cursor: default; }
+.post.is-soon .post-title { color: var(--ink); }
+.post.is-soon .post-meta-label { color: var(--ink-faint); }
+/* Thinking cards */
+.thoughts-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.thought-card { background: var(--surface-2); border: 1px solid var(--border); border-radius: 2px; padding: 1.75rem; display: flex; flex-direction: column; gap: 0.75rem; transition: border-color 0.15s; }
+.thought-card:hover { border-color: var(--green); }
+.thought-card.thought-network { grid-column: 1 / -1; background: var(--green); border-color: var(--green); }
+.thought-card.thought-network .thought-label { color: rgba(255,255,255,0.85); }
+.thought-card.thought-network .thought-text { color: #fff; font-size: 1.2rem; font-weight: 400; line-height: 1.6; }
+.thought-card.thought-network .thought-attr { color: rgba(255,255,255,0.55); }
+.thought-card.thought-dark { background: var(--green); border-color: var(--green); }
+.thought-card.thought-dark .thought-label { color: rgba(255,255,255,0.85); }
+.thought-card.thought-dark .thought-text { color: rgba(255,255,255,0.85); }
+.thought-card.thought-genx { grid-column: 1 / -1; }
+.thought-genx-inner { display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
+.thought-genx-content { flex: 1; display: flex; flex-direction: column; gap: 0.9rem; }
+.thought-genx-icon { flex-shrink: 0; opacity: 0.55; }
+.thought-label { font-family: var(--sans); font-size: 0.9rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--ink); }
+.thought-text { font-size: 0.95rem; font-weight: 300; color: var(--ink); line-height: 1.7; }
+.thought-attr { font-family: var(--mono); font-size: 10px; color: var(--ink-faint); letter-spacing: 0.06em; margin-top: 0.25rem; }
+footer { padding: 1.5rem 5rem 1.5rem 4rem; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--border); }
+.footer-text { font-family: var(--mono); font-size: 10px; color: var(--ink-faint); letter-spacing: 0.06em; }
+@media (max-width: 860px) {
+.shell { grid-template-columns: 1fr; }
+.rail { height: 48px; flex-direction: row; padding: 0 1.5rem; position: sticky; top: 0; }
+.rail-logo { writing-mode: horizontal-tb; transform: none; }
+.rail-nav { flex-direction: row; gap: 1.25rem; }
+.rail-nav a { writing-mode: horizontal-tb; transform: none; }
+.rail-pip { display: none; }
+.masthead { padding: 2.5rem 1.5rem 2rem; }
+.masthead-top { grid-template-columns: 1fr; gap: 1.5rem; }
+section { padding: 2.5rem 1.5rem; }
+.section-top { grid-template-columns: 1fr; gap: 1.5rem; }
+.post a, .post .post-inner { grid-template-columns: 1fr; gap: 0.75rem; padding: 1.75rem 0.5rem; }
+.thoughts-grid { grid-template-columns: 1fr; }
+.thought-card.thought-network, .thought-card.thought-genx { grid-column: span 1; }
+.thought-genx-inner { flex-direction: column; }
+.thought-genx-icon { display: none; }
+footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; text-align: center; }
+}
+</style>
+</head>
+<body>
+<div class="shell">
+<nav class="rail" aria-label="Site navigation">
+<a href="index.html" class="rail-logo">tpapazoglou.me</a>
+<ul class="rail-nav">
+<li><a href="index.html">Home</a></li>
+<li><a href="#writing" class="rail-cta">Writing</a></li>
+<li><a href="#thinking">Thinking</a></li>
+<li><a href="index.html#contact">Contact</a></li>
+</ul>
+<div class="rail-pip"></div>
+</nav>
+<div class="main">
+<div class="masthead">
+<a href="index.html" class="masthead-back">← Back to home</a>
+<div class="masthead-top">
+<div>
+<h1>On<br><span class="g">Paper.</span></h1>
+</div>
+<div>
+<div class="masthead-divider"></div>
+<p class="masthead-body">Writing is how I check my own thinking. Saying it in my head was never enough proof I understood it. Long-form articles on technology leadership, systems thinking and AI, plus the shorter observations I keep returning to.</p>
+<span class="masthead-byline">// Tom Papazoglou</span>
+</div>
+</div>
+</div>
+
+<section id="writing">
+<div class="feed">
+<div class="post">
+<a href="https://medium.com/@tompapazoglou/the-alignment-you-skip-on-day-zero-is-the-failure-you-explain-on-day-one-b126632378ee" target="_blank" rel="noopener">
+<div class="post-meta">
+<span class="post-meta-label">Published</span>
+<span class="post-meta-sub">On Medium</span>
+</div>
+<div>
+<p class="post-title">The alignment you skip on day zero is the failure you explain on day one</p>
+<p class="post-excerpt">The most important meeting in any transformation is the one that happens before the work starts. Not the kickoff. The alignment conversation nobody had.</p>
+<span class="post-read">→ Read on Medium</span>
+</div>
+</a>
+</div>
+
+<div class="post">
+<a href="https://medium.com/@tompapazoglou/the-authority-gap-nobody-talks-about-52b91157a55d" target="_blank" rel="noopener">
+<div class="post-meta">
+<span class="post-meta-label">Published</span>
+<span class="post-meta-sub">On Medium</span>
+</div>
+<div>
+<p class="post-title">The authority gap nobody talks about</p>
+<p class="post-excerpt">Capability and authority rarely grow at the same pace. The gap between them shapes more careers than most people realise.</p>
+<span class="post-read">→ Read on Medium</span>
+</div>
+</a>
+</div>
+
+<div class="post">
+<a href="https://medium.com/@tompapazoglou/the-people-nobody-saw-coming-b9c70511f2d6" target="_blank" rel="noopener">
+<div class="post-meta">
+<span class="post-meta-label">Published</span>
+<span class="post-meta-sub">On Medium</span>
+</div>
+<div>
+<p class="post-title">The people nobody saw coming</p>
+<p class="post-excerpt">Half of them came from the helpdesk. Nobody expected what they became.</p>
+<span class="post-read">→ Read on Medium</span>
+</div>
+</a>
+</div>
+
+<div class="post is-soon">
+<div class="post-inner">
+<div class="post-meta">
+<span class="post-meta-label">Coming soon</span>
+<span class="post-meta-sub">In progress</span>
+</div>
+<div>
+<p class="post-title">Building my personal AI operating system</p>
+<p class="post-excerpt">Everyone is prompting. Very few are building. This is about designing an AI system that works for your life around the clock, not just when you open a chat window. The more it does, the further you reach.</p>
+<span class="post-read">Coming soon</span>
+</div>
+</div>
+</div>
+
+<div class="post is-soon">
+<div class="post-inner">
+<div class="post-meta">
+<span class="post-meta-label">Coming soon</span>
+<span class="post-meta-sub">In progress</span>
+</div>
+<div>
+<p class="post-title">Human-in-the-loop: what it actually means</p>
+<p class="post-excerpt">AI automation isn't about removing humans from the loop. It's about designing the loop so humans are in the right place at the right time. AI slop is real, it's wasteful, and it happens when humans are taken out of the equation too early.</p>
+<span class="post-read">Coming soon</span>
+</div>
+</div>
+</div>
+
+<div class="post is-soon">
+<div class="post-inner">
+<div class="post-meta">
+<span class="post-meta-label">Coming soon</span>
+<span class="post-meta-sub">In progress</span>
+</div>
+<div>
+<p class="post-title">Why tokenomics matter in the era of AI</p>
+<p class="post-excerpt">Every AI interaction has a cost. Most organisations aren't tracking it yet. We saw the same thing with cloud. FinOps was born out of that chaos. Tokenomics and LLMOps are the next frontier. Tokens are the new cloud credits. The bill is already running. Most people just haven't seen it yet.</p>
+<span class="post-read">Coming soon</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="thinking">
+<div class="section-top">
+<div class="section-meta">
+<span class="section-num">01 /</span>
+<h2>What I'm<br><span class="g">Thinking.</span></h2>
+</div>
+<p class="section-lede">If I can't explain it to the version of me that started on the helpdesk, I don't understand it. Shorter observations, positions, and the ideas I keep returning to.</p>
+</div>
+<div class="thoughts-grid">
+<div class="thought-card thought-network">
+<p class="thought-label">On networks</p>
+<p class="thought-text">"The network is the runway. Without it, you're just showing up to the airport to have lunch."</p>
+<p class="thought-attr">A leader I have the privilege of working under.</p>
+</div>
+<div class="thought-card">
+<p class="thought-label">On AI</p>
+<p class="thought-text">Most technology resistance isn't rational. It's emotional. I watched it with cloud in 2015. They even printed it on t-shirts: 'There is no cloud, it's just someone else's computer.' AI is no different. Until you address the anxiety, no implementation plan survives contact with the humans it depends on. The slogans will come. They always do.</p>
+</div>
+<div class="thought-card">
+<p class="thought-label">On change leadership</p>
+<p class="thought-text">Most change programs hand people a what and a how and wonder why nobody moves. I've never seen a successful transformation that skipped the why. People don't resist change. They resist being asked to change without understanding the reason.</p>
+</div>
+<div class="thought-card">
+<p class="thought-label">On ambiguity</p>
+<p class="thought-text">There is rarely a clear playbook at the frontier. My job is to write it, and leave it better than I found it.</p>
+</div>
+<div class="thought-card">
+<p class="thought-label">On TPM work</p>
+<p class="thought-text">A TPM is the most misunderstood role in technology. It's not coordination. It's not status updates. It's leading without authority on a moving train, in fog, with people who all think they're the driver. The ones who do it well make the impossible look like it was always the plan.</p>
+</div>
+<div class="thought-card">
+<p class="thought-label">On what TPMs actually do</p>
+<p class="thought-text">The great TPMs don't wait to be asked. They see around corners, define what's undefined, and bring enough intensity that momentum becomes contagious. Most people think it's about process. It's actually about people. The spreadsheet is the easy part.</p>
+</div>
+<div class="thought-card">
+<p class="thought-label">On building people</p>
+<p class="thought-text">Giving people an opportunity to thrive when nobody gave you that same opportunity yourself. That's not a management philosophy. That's personal.</p>
+</div>
+<div class="thought-card thought-dark thought-genx">
+<div class="thought-genx-inner">
+<div class="thought-genx-content">
+<p class="thought-label">On the generation that waited</p>
+<p class="thought-text">I'm a Gen X kid who grew up watching this future in movies that felt decades away. Terminator. WarGames. Star Wars. Battlestar Galactica. Knight Rider. The technology we dreamed about is no longer science fiction. I work on it every day. That kid had no idea he'd one day work on the infrastructure those technologies depend on. I don't take that lightly.</p>
+</div>
+<div class="thought-genx-icon" aria-hidden="true">
+<svg width="72" height="52" viewBox="0 0 72 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="0" y="0" width="26" height="6" fill="rgba(255,255,255,0.25)"/>
+<rect x="0" y="14" width="36" height="6" fill="rgba(255,255,255,0.2)"/>
+<rect x="0" y="28" width="10" height="6" fill="rgba(255,255,255,0.5)"/>
+<rect x="16" y="26" width="14" height="10" fill="rgba(255,255,255,0.95)"/>
+<rect x="34" y="29" width="8" height="5" fill="rgba(255,255,255,0.2)"/>
+<rect x="46" y="29" width="8" height="5" fill="rgba(255,255,255,0.1)"/>
+</svg>
+</div>
+</div>
+</div>
+</div>
+</section>
+<footer>
+<span class="footer-text">© 2026 Tom Papazoglou</span>
+<span class="footer-text">tpapazoglou.me / blog</span>
+</footer>
+</div>
+</div>
+</body>
+</html>
