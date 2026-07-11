@@ -36,12 +36,12 @@
 --mono: 'IBM Plex Mono', monospace;
 --sans: 'Outfit', system-ui, sans-serif;
 }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; font-size: 17px; }
 body {
 font-family: var(--sans);
 background: var(--bg);
 color: var(--ink);
-font-size: 16px;
+font-size: 1rem;
 line-height: 1.7;
 -webkit-font-smoothing: antialiased;
 }
@@ -89,8 +89,8 @@ transition: color 0.2s;
 .masthead { padding: 3.5rem 5rem 3.5rem 4rem; border-bottom: 1px solid var(--border); }
 .masthead-back { font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--green); text-decoration: none; display: inline-block; margin-bottom: 2.5rem; }
 .masthead-back:hover { color: var(--green-dark); }
-.masthead-top { display: grid; grid-template-columns: 35fr 65fr; gap: 4rem; align-items: center; }
-.masthead h1 { font-family: var(--sans); font-size: clamp(2.6rem, 5vw, 4.4rem); font-weight: 800; line-height: 0.93; letter-spacing: -0.04em; text-transform: uppercase; color: var(--ink); }
+.masthead-top { display: grid; grid-template-columns: 22fr 78fr; gap: 3rem; align-items: center; }
+.masthead h1 { font-family: var(--sans); font-size: clamp(1.8rem, 3vw, 3rem); font-weight: 800; line-height: 0.93; letter-spacing: -0.04em; text-transform: uppercase; color: var(--ink); }
 .masthead h1 .g { color: var(--green); }
 .masthead-divider { width: 28px; height: 2px; background: var(--green); margin-bottom: 1.5rem; }
 .masthead-quote { border-left: 3px solid var(--green); padding-left: 1.5rem; }
@@ -98,17 +98,17 @@ transition: color 0.2s;
 .masthead-byline { font-family: var(--mono); font-size: 11px; color: var(--ink-faint); letter-spacing: 0.1em; display: block; margin-top: 1.5rem; }
 section { padding: 3rem 5rem 3rem 4rem; border-bottom: 1px solid var(--border); }
 section:last-of-type { border-bottom: none; }
-.section-top { display: grid; grid-template-columns: 35fr 65fr; gap: 4rem; align-items: center; margin-bottom: 2.5rem; }
+.section-top { display: grid; grid-template-columns: 22fr 78fr; gap: 3rem; align-items: center; margin-bottom: 2.5rem; }
 .section-meta { display: flex; align-items: baseline; gap: 1.5rem; }
 .section-num { font-family: var(--mono); font-size: 10px; color: var(--ink-faint); letter-spacing: 0.1em; white-space: nowrap; }
 h2 { font-family: var(--sans); font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 800; letter-spacing: -0.03em; text-transform: uppercase; line-height: 0.95; color: var(--ink); }
-#thinking h2 { font-size: clamp(2.6rem, 5vw, 4.4rem); line-height: 0.93; letter-spacing: -0.04em; }
+#thinking h2 { font-size: clamp(1.8rem, 3vw, 3rem); line-height: 0.93; letter-spacing: -0.04em; }
 h2 .g { color: var(--green); }
 .section-lede { font-size: clamp(1.1rem, 1.35vw, 1.3rem); font-weight: 300; color: var(--ink-mid); line-height: 1.65; }
 /* Post feed */
 .feed { border-top: 1px solid var(--border); }
 .post { border-bottom: 1px solid var(--border); }
-.post a, .post .post-inner { display: grid; grid-template-columns: 22fr 78fr; gap: 3rem; align-items: start; padding: 2rem 1.5rem; text-decoration: none; color: inherit; transition: background 0.15s; }
+.post a, .post .post-inner { display: grid; grid-template-columns: 22fr 78fr; gap: 3rem; align-items: start; padding: 2rem 0; text-decoration: none; color: inherit; transition: background 0.15s; }
 .post a:hover { background: var(--green); }
 .post a:hover .post-title { color: #fff; }
 .post a:hover .post-excerpt { color: rgba(255,255,255,0.85); }
