@@ -94,7 +94,7 @@ transition: color 0.2s;
 .masthead h1 .g { color: var(--green); }
 .masthead-divider { width: 28px; height: 2px; background: var(--green); margin-bottom: 1.5rem; }
 .masthead-quote { border-left: 3px solid var(--green); padding-left: 1.5rem; }
-.masthead-body { font-size: 1rem; font-weight: 300; color: var(--ink-mid); line-height: 1.8; }
+.masthead-body { font-size: clamp(1.1rem, 1.35vw, 1.3rem); font-weight: 300; color: var(--ink-mid); line-height: 1.65; }
 .masthead-byline { font-family: var(--mono); font-size: 11px; color: var(--ink-faint); letter-spacing: 0.1em; display: block; margin-top: 1.5rem; }
 section { padding: 3rem 5rem 3rem 4rem; border-bottom: 1px solid var(--border); }
 section:last-of-type { border-bottom: none; }
@@ -104,7 +104,7 @@ section:last-of-type { border-bottom: none; }
 h2 { font-family: var(--sans); font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 800; letter-spacing: -0.03em; text-transform: uppercase; line-height: 0.95; color: var(--ink); }
 #thinking h2 { font-size: clamp(2.6rem, 5vw, 4.4rem); line-height: 0.93; letter-spacing: -0.04em; }
 h2 .g { color: var(--green); }
-.section-lede { font-size: 0.95rem; font-weight: 300; color: var(--ink-mid); line-height: 1.8; }
+.section-lede { font-size: clamp(1.1rem, 1.35vw, 1.3rem); font-weight: 300; color: var(--ink-mid); line-height: 1.65; }
 /* Post feed */
 .feed { border-top: 1px solid var(--border); }
 .post { border-bottom: 1px solid var(--border); }
@@ -184,7 +184,6 @@ footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; text-align: cente
 </div>
 <div class="masthead-quote">
 <p class="masthead-body">Writing is how I check my own thinking. Saying it in my head was never enough proof I understood it. Long-form articles on technology leadership, systems thinking and AI, plus the shorter observations I keep returning to.</p>
-<span class="masthead-byline">// Tom Papazoglou</span>
 </div>
 </div>
 </div>
