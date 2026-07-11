@@ -89,10 +89,11 @@ transition: color 0.2s;
 .masthead { padding: 3.5rem 5rem 3.5rem 4rem; border-bottom: 1px solid var(--border); }
 .masthead-back { font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--green); text-decoration: none; display: inline-block; margin-bottom: 2.5rem; }
 .masthead-back:hover { color: var(--green-dark); }
-.masthead-top { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+.masthead-top { display: grid; grid-template-columns: 35fr 65fr; gap: 4rem; align-items: center; }
 .masthead h1 { font-family: var(--sans); font-size: clamp(2.6rem, 5vw, 4.4rem); font-weight: 800; line-height: 0.93; letter-spacing: -0.04em; text-transform: uppercase; color: var(--ink); }
 .masthead h1 .g { color: var(--green); }
 .masthead-divider { width: 28px; height: 2px; background: var(--green); margin-bottom: 1.5rem; }
+.masthead-quote { border-left: 3px solid var(--green); padding-left: 1.5rem; }
 .masthead-body { font-size: 1rem; font-weight: 300; color: var(--ink-mid); line-height: 1.8; }
 .masthead-byline { font-family: var(--mono); font-size: 11px; color: var(--ink-faint); letter-spacing: 0.1em; display: block; margin-top: 1.5rem; }
 section { padding: 3rem 5rem 3rem 4rem; border-bottom: 1px solid var(--border); }
@@ -180,8 +181,7 @@ footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; text-align: cente
 <div>
 <h1>On<br><span class="g">Paper.</span></h1>
 </div>
-<div>
-<div class="masthead-divider"></div>
+<div class="masthead-quote">
 <p class="masthead-body">Writing is how I check my own thinking. Saying it in my head was never enough proof I understood it. Long-form articles on technology leadership, systems thinking and AI, plus the shorter observations I keep returning to.</p>
 <span class="masthead-byline">// Tom Papazoglou</span>
 </div>
@@ -191,29 +191,43 @@ footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; text-align: cente
 <section id="writing">
 <div class="feed">
 <div class="post">
-<a href="https://medium.com/@tompapazoglou/the-alignment-you-skip-on-day-zero-is-the-failure-you-explain-on-day-one-b126632378ee" target="_blank" rel="noopener">
+<a href="https://medium.com/@tompapazoglou/you-cant-rent-a-moat-66ab05669763" target="_blank" rel="noopener">
 <div class="post-meta">
-<span class="post-meta-label">Published</span>
-<span class="post-meta-sub">On Medium</span>
+<span class="post-meta-label">Jul 2026</span>
+<span class="post-meta-sub">5 min read</span>
 </div>
 <div>
-<p class="post-title">The alignment you skip on day zero is the failure you explain on day one</p>
-<p class="post-excerpt">The most important meeting in any transformation is the one that happens before the work starts. Not the kickoff. The alignment conversation nobody had.</p>
-<span class="post-read">→ Read on Medium</span>
+<p class="post-title">You can't rent a moat</p>
+<p class="post-excerpt">The AI conversation is stuck on what you can buy: models, compute, capacity. But anything you can buy, a competitor can buy too. The moat is the learning loop inside a company and the trust an industry earns, and neither comes with the subscription.</p>
+<span class="post-read">&rarr; Read on Medium</span>
 </div>
 </a>
 </div>
 
 <div class="post">
-<a href="https://medium.com/@tompapazoglou/the-authority-gap-nobody-talks-about-52b91157a55d" target="_blank" rel="noopener">
+<a href="https://medium.com/@tompapazoglou/were-past-the-tokenmaxxing-high-now-comes-the-accounting-934f9eabf20e" target="_blank" rel="noopener">
 <div class="post-meta">
-<span class="post-meta-label">Published</span>
-<span class="post-meta-sub">On Medium</span>
+<span class="post-meta-label">Jun 2026</span>
+<span class="post-meta-sub">6 min read</span>
 </div>
 <div>
-<p class="post-title">The authority gap nobody talks about</p>
-<p class="post-excerpt">Capability and authority rarely grow at the same pace. The gap between them shapes more careers than most people realise.</p>
-<span class="post-read">→ Read on Medium</span>
+<p class="post-title">We're past the tokenmaxxing high. Now comes the accounting.</p>
+<p class="post-excerpt">Uber, Amazon, Meta and Microsoft all hit the same AI spending wall this year. The real problem isn't the tokens. It's who owns the bill before the spend happens. Cloud already taught this lesson once, and called it FinOps.</p>
+<span class="post-read">&rarr; Read on Medium</span>
+</div>
+</a>
+</div>
+
+<div class="post">
+<a href="https://medium.com/@tompapazoglou/staying-relevant-is-the-hardest-job-i-have-ever-had-76879fbc6222" target="_blank" rel="noopener">
+<div class="post-meta">
+<span class="post-meta-label">Jun 2026</span>
+<span class="post-meta-sub">5 min read</span>
+</div>
+<div>
+<p class="post-title">Staying relevant is the hardest job I have ever had</p>
+<p class="post-excerpt">Fifteen years in, the hardest work is staying relevant while the ground keeps shifting. The feed sells anxiety. The real learning comes from breaking things and being willing to be a beginner again.</p>
+<span class="post-read">&rarr; Read on Medium</span>
 </div>
 </a>
 </div>
@@ -221,57 +235,43 @@ footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; text-align: cente
 <div class="post">
 <a href="https://medium.com/@tompapazoglou/the-people-nobody-saw-coming-b9c70511f2d6" target="_blank" rel="noopener">
 <div class="post-meta">
-<span class="post-meta-label">Published</span>
-<span class="post-meta-sub">On Medium</span>
+<span class="post-meta-label">Jun 2026</span>
+<span class="post-meta-sub">5 min read</span>
 </div>
 <div>
 <p class="post-title">The people nobody saw coming</p>
 <p class="post-excerpt">Half of them came from the helpdesk. Nobody expected what they became.</p>
-<span class="post-read">→ Read on Medium</span>
+<span class="post-read">&rarr; Read on Medium</span>
 </div>
 </a>
 </div>
 
-<div class="post is-soon">
-<div class="post-inner">
+<div class="post">
+<a href="https://medium.com/@tompapazoglou/the-authority-gap-nobody-talks-about-52b91157a55d" target="_blank" rel="noopener">
 <div class="post-meta">
-<span class="post-meta-label">Coming soon</span>
-<span class="post-meta-sub">In progress</span>
+<span class="post-meta-label">Jun 2026</span>
+<span class="post-meta-sub">5 min read</span>
 </div>
 <div>
-<p class="post-title">Building my personal AI operating system</p>
-<p class="post-excerpt">Everyone is prompting. Very few are building. This is about designing an AI system that works for your life around the clock, not just when you open a chat window. The more it does, the further you reach.</p>
-<span class="post-read">Coming soon</span>
+<p class="post-title">The authority gap nobody talks about</p>
+<p class="post-excerpt">Capability and authority rarely grow at the same pace. The gap between them shapes more careers than most people realise.</p>
+<span class="post-read">&rarr; Read on Medium</span>
 </div>
-</div>
+</a>
 </div>
 
-<div class="post is-soon">
-<div class="post-inner">
+<div class="post">
+<a href="https://medium.com/@tompapazoglou/the-alignment-you-skip-on-day-zero-is-the-failure-you-explain-on-day-one-b126632378ee" target="_blank" rel="noopener">
 <div class="post-meta">
-<span class="post-meta-label">Coming soon</span>
-<span class="post-meta-sub">In progress</span>
+<span class="post-meta-label">Jun 2026</span>
+<span class="post-meta-sub">5 min read</span>
 </div>
 <div>
-<p class="post-title">Human-in-the-loop: what it actually means</p>
-<p class="post-excerpt">AI automation isn't about removing humans from the loop. It's about designing the loop so humans are in the right place at the right time. AI slop is real, it's wasteful, and it happens when humans are taken out of the equation too early.</p>
-<span class="post-read">Coming soon</span>
+<p class="post-title">The alignment you skip on day zero is the failure you explain on day one</p>
+<p class="post-excerpt">The most important meeting in any transformation is the one that happens before the work starts. Not the kickoff. The alignment conversation nobody had.</p>
+<span class="post-read">&rarr; Read on Medium</span>
 </div>
-</div>
-</div>
-
-<div class="post is-soon">
-<div class="post-inner">
-<div class="post-meta">
-<span class="post-meta-label">Coming soon</span>
-<span class="post-meta-sub">In progress</span>
-</div>
-<div>
-<p class="post-title">Why tokenomics matter in the era of AI</p>
-<p class="post-excerpt">Every AI interaction has a cost. Most organisations aren't tracking it yet. We saw the same thing with cloud. FinOps was born out of that chaos. Tokenomics and LLMOps are the next frontier. Tokens are the new cloud credits. The bill is already running. Most people just haven't seen it yet.</p>
-<span class="post-read">Coming soon</span>
-</div>
-</div>
+</a>
 </div>
 </div>
 </section>

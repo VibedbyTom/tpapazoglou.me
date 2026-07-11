@@ -88,7 +88,7 @@ transition: color 0.2s;
 .hero { padding: 4rem 5rem 0 4rem; border-bottom: 1px solid var(--border); }
 .hero-top {
 display: grid;
-grid-template-columns: 1fr 1fr;
+grid-template-columns: 35fr 65fr;
 gap: 4rem;
 align-items: center;
 padding-bottom: 3rem;
@@ -98,6 +98,7 @@ border-bottom: 1px solid var(--border);
 h1 { font-family: var(--sans); font-size: clamp(2.6rem, 4.6vw, 4.6rem); font-weight: 800; line-height: 0.93; letter-spacing: -0.04em; text-transform: uppercase; color: var(--ink); }
 h1 .g { color: var(--green); }
 .hero-divider { width: 28px; height: 2px; background: var(--green); margin-bottom: 1.5rem; }
+.hero-quote { border-left: 3px solid var(--green); padding-left: 1.5rem; }
 .hero-body { font-size: 1rem; font-weight: 300; color: var(--ink-mid); line-height: 1.8; margin-bottom: 1.75rem; }
 .hero-byline { font-family: var(--mono); font-size: 11px; color: var(--ink-faint); letter-spacing: 0.1em; display: block; margin-top: 1.5rem; }
 .hero-cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--border); border-top: 1px solid var(--border); }
@@ -180,8 +181,7 @@ footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; text-align: cente
 <div>
 <h1>Tech<span class="g">.</span><br>Leader<span class="g">.</span><br>Builder<span class="g">.</span><br><span class="g">Curious.</span></h1>
 </div>
-<div>
-<div class="hero-divider"></div>
+<div class="hero-quote">
 <p class="hero-body">I have spent my career building clarity in complex technology environments, turning ambiguity into ownership, alignment, and execution.</p>
 <span class="hero-byline">// Tom Papazoglou</span>
 </div>
