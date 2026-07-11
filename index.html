@@ -141,10 +141,10 @@ h2 .g { color: var(--green); }
 .blog-cta-sub { font-size: var(--fs-small); font-weight: 300; color: rgba(255,255,255,0.55); line-height: 1.7; margin-bottom: 1.5rem; }
 .blog-cta-btn { display: inline-block; font-family: var(--sans); font-size: var(--fs-label); font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.7rem 1.6rem; text-decoration: none; border-radius: 2px; background: var(--green); color: #fff; border: 1px solid var(--green); transition: all 0.18s; }
 .blog-cta-btn:hover { background: #fff; color: var(--ink); border-color: #fff; }
-.contact-links { display: flex; align-items: center; gap: 1.75rem; flex-wrap: wrap; }
-.contact-links a { color: var(--ink); display: inline-flex; transition: color 0.18s; }
-.contact-links a:hover { color: var(--green); }
-.contact-links svg { width: 26px; height: 26px; display: block; }
+.contact-links { display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
+.contact-links a { color: var(--ink); display: inline-flex; transition: color 0.2s ease, transform 0.2s ease; }
+.contact-links a:hover { color: var(--green); transform: scale(1.25); }
+.contact-links svg { width: clamp(42px, 5vw, 64px); height: clamp(42px, 5vw, 64px); display: block; }
 footer { padding: 1.5rem 5rem 1.5rem 4rem; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--border); }
 .footer-text { font-family: var(--mono); font-size: var(--fs-label); color: var(--ink-faint); letter-spacing: 0.06em; }
 @media (max-width: 860px) {
