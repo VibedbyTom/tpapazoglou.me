@@ -134,11 +134,11 @@ h2 .g { color: var(--green); }
 .j-desc p { margin-bottom: 0.75rem; }
 .j-desc p:last-child { margin-bottom: 0; }
 /* Blog CTA */
-.blog-cta { background: var(--ink); border-radius: 2px; padding: 2.75rem 3rem; margin: 0 -3rem; display: flex; flex-direction: column; gap: 1.75rem; }
+.blog-cta { background: var(--ink); border-radius: 2px; padding: 2.75rem 3rem; margin: 0 -3rem; display: flex; flex-direction: column; gap: 2rem; align-items: flex-end; }
+.blog-cta-top { width: 100%; display: grid; grid-template-columns: 22fr 78fr; gap: 3rem; align-items: center; }
 .blog-cta-label { font-family: var(--mono); font-size: var(--fs-label); letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 1rem; }
 .blog-cta-text { font-size: var(--fs-heading); font-weight: 800; letter-spacing: -0.02em; text-transform: uppercase; line-height: 1.1; color: #fff; }
 .blog-cta-text .g { color: #6BBF9A; }
-.blog-cta-body { display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
 .blog-cta-sub { font-size: var(--fs-lead); font-weight: 300; color: rgba(255,255,255,0.65); line-height: 1.6; }
 .blog-cta-btn { display: inline-block; flex-shrink: 0; font-family: var(--sans); font-size: var(--fs-label); font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.7rem 1.6rem; text-decoration: none; border-radius: 2px; background: var(--green); color: #fff; border: 1px solid var(--green); transition: all 0.18s; }
 .blog-cta-btn:hover { background: #fff; color: var(--ink); border-color: #fff; }
@@ -162,7 +162,8 @@ footer { padding: 1.5rem 5rem 1.5rem 4rem; display: flex; align-items: center; j
 section { padding: 2.5rem 1.5rem; }
 .about-cols { grid-template-columns: 1fr; }
 .journey-item { grid-template-columns: 1fr; gap: 0.75rem; }
-.blog-cta { gap: 1.5rem; padding: 2rem 1.75rem; margin: 0; }
+.blog-cta { gap: 1.5rem; padding: 2rem 1.75rem; margin: 0; align-items: stretch; }
+.blog-cta-top { grid-template-columns: 1fr; gap: 1rem; }
 .contact-links { gap: 1.5rem; }
 footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; text-align: center; }
 }
@@ -293,11 +294,11 @@ footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; text-align: cente
 
 <section id="blog-cta">
 <div class="blog-cta">
+<div class="blog-cta-top">
 <p class="blog-cta-text">Articles, and the<br>ideas <span class="g">behind them.</span></p>
-<div class="blog-cta-body">
 <p class="blog-cta-sub">The lessons that cost years to learn, and about ten minutes to read.</p>
-<a href="blog.html" class="blog-cta-btn">Read the blog →</a>
 </div>
+<a href="blog.html" class="blog-cta-btn">Read the blog →</a>
 </div>
 </section>
 
